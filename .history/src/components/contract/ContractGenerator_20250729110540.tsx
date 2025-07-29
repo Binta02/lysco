@@ -65,7 +65,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
             align-items: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #1d5759ff;
+            border-bottom: 2px solid #3d8689ff;
           }
 
           .logo-title-container {
@@ -109,7 +109,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           }
 
           .section-header {
-            background-color: #1d5759ff;
+            background-color: #3d8689ff;
             color: white;
             padding: 8px 15px;
             font-size: 16px;
@@ -158,7 +158,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           .detail-label {
             font-weight: 600;
             min-width: 150px;
-            color: #1d5759ff;
+            color: #3d8689ff;
           }
 
           .detail-value {
@@ -168,7 +168,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           /* Articles */
           .article {
             margin-bottom: 25px;
-            border-left: 3px solid #1d5759ff;
+            border-left: 3px solid #3d8689ff;
             padding-left: 15px;
           }
 
@@ -196,7 +196,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           }
 
           .list-bullet {
-            color: #1d5759ff;
+            color: #3d8689ff;
             margin-right: 8px;
             font-weight: bold;
           }
@@ -205,7 +205,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           .signatures-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 50px;
           }
 
           .signature-block {
@@ -238,9 +238,6 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
             padding-top: 10px;
             border-top: 1px solid #ddd;
           }
-            .black{
-            color: #3b3d3dff;
-            }
 
           /* Éléments visuels */
           .highlight-box {
@@ -248,7 +245,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
             padding: 15px;
             border-radius: 5px;
             margin: 15px 0;
-            border-left: 4px solid #1d5759ff;
+            border-left: 4px solid #3d8689ff;
           }
 
           .text-center {
@@ -256,17 +253,13 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           }
 
           .text-important {
-            color: #1d5759ff;
+            color: #3d8689ff;
             font-weight: 600;
           }
 
           .spacer {
             height: 15px;
           }
-            .force-break {
-    page-break-before: always;
-    break-before: page;
-  }
         </style>
       </head>
       <body>
@@ -554,10 +547,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
               dans un délai de 15 jours.</p>
             </div>
           </div>
-        </div>
 
-        <div class="page-break"></div>
-        <div class="page-container force-break">
           <div class="contract-section">
             <div class="section-header">SIGNATURES</div>
             <div class="section-body">
@@ -584,7 +574,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           </div>
 
           <div class="footer">
-            28 Rue de l'église, 95170 Deuil-la-Barre • <a href="lys-and-co.com" class="black">lys-and-co.com</a> • contact@lys-and-co.com<br/>
+            28 Rue de l'église, 95170 Deuil-la-Barre • <a href="lys-and-co.com">lys-and-co.com</a> • contact@lys-and-co.com<br/>
             Tél : 09.53.42.11.63 • Agrément : 04_95_2023 • © 2025 Lys & Co
           </div>
         </div>
@@ -619,7 +609,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
       <Button
         title="📄 Générer le contrat PDF"
         onPress={handleGeneratePdf}
-        color="#1d5759ff"
+        color="#3d8689ff"
       />
     </View>
   );

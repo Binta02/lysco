@@ -205,7 +205,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           .signatures-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 50px;
           }
 
           .signature-block {

@@ -205,7 +205,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           .signatures-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 100px;
           }
 
           .signature-block {
@@ -263,10 +263,6 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           .spacer {
             height: 15px;
           }
-            .force-break {
-    page-break-before: always;
-    break-before: page;
-  }
         </style>
       </head>
       <body>
@@ -554,10 +550,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
               dans un délai de 15 jours.</p>
             </div>
           </div>
-        </div>
 
-        <div class="page-break"></div>
-        <div class="page-container force-break">
           <div class="contract-section">
             <div class="section-header">SIGNATURES</div>
             <div class="section-body">

@@ -101,37 +101,35 @@ const Checkout = () => {
 
   const getPriceIdFromProductId = (productId: string): string | undefined => {
     const map: Record<string, string> = {
-      "domiciliation-mensuel-societe-Abonnement-Mensuel":
-        "price_1RZSgAL4PnylHeS6yEgwLzzW",
-      "domiciliation-mensuel-societe-Abonnement-6-mois":
-        "price_1RZSNFL4PnylHeS6bmP6YUy2",
-      "domiciliation-mensuel-auto-entrepreneur-Abonnement-Mensuel":
-        "price_1RZSLML4PnylHeS6UMlLbJXY",
-      "domiciliation-mensuel-auto-entreprise-Abonnement-6-mois":
-        "price_1RZSM3L4PnylHeS6sa3QIcxv",
-      "domiciliation-mensuel-association": "price_1RZSO4L4PnylHeS6oF0FB0DM",
-      "service-reexpedition": "price_1RZSVDL4PnylHeS6rWzjPwPs",
-      "service-scan": "price_1RZSUmL4PnylHeS6GSGgxXlI",
-      "service-colis": "price_1RZSUML4PnylHeS6TrrTxJK7",
-      "coworking-space": "price_1RZSJgL4PnylHeS6cRgTMAHe",
-      "location-bureau": "price_1RZSHfL4PnylHeS6yKhokYyB",
-      "formation-room": "price_1RZSIrL4PnylHeS6JYNanGEv",
-      "domiciliation-1an-entreprise": "price_1RZSaTL4PnylHeS6HVPVvGaV",
-      "domiciliation-3mois-entreprise": "price_1RZSZZL4PnylHeS6dnGwO0yz",
-      "domiciliation-3mois-micro": "price_1RZSY6L4PnylHeS67MY03k7z",
-      "domiciliation-6mois-entreprise": "price_1RZSXBL4PnylHeS6M1xdmC4p",
-      "domiciliation-6mois-micro": "price_1RZSWiL4PnylHeS6kaYjekvT",
-      "pack-domine": "price_1RZSWAL4PnylHeS6SxTYCs4P",
-      "vtc-creation": "price_1RZSTiL4PnylHeS6ZhbTFDm5",
-      "bank-account": "price_1RZST9L4PnylHeS6FnkYpDQ5",
-      "company-creation": "price_1RZSSUL4PnylHeS60reF3XU6",
-      "micro-company": "price_1RZSS0L4PnylHeS6qSTPszwd",
-      "company-transfer": "price_1RZSRTL4PnylHeS6galw0X9S",
-      "share-transfer": "price_1RZSQsL4PnylHeS6vv6GmsNL",
-      "commercial-ad": "price_1RZSQJL4PnylHeS6cYFetnsv",
-      "quote-creation": "price_1RZSPoL4PnylHeS6lWuRYHsR",
-      "annual-accounts": "price_1RZSPCL4PnylHeS6aFQtr202",
-      "company-modification": "price_1RZSOcL4PnylHeS6yjnAkWBN",
+      "domiciliation-mensuel-societe-normal": "price_1RSKGYQ5vrwB5bWyC5m7YKIm", //fait
+      "domiciliation-mensuel-societe-reduit": "price_1RSMFmQ5vrwB5bWyBk9nXFcb", //fait
+      "domiciliation-mensuel-auto-entrepreneur-normal":
+        "price_1RSMGfQ5vrwB5bWyWe4cF5pp", //fait
+      "domiciliation-mensuel-auto-entreprise-reduit":
+        "price_1RSMGIQ5vrwB5bWy4e4ogBUY", //fait
+      "domiciliation-mensuel-association": "price_1RSLsMQ5vrwB5bWydudKGQ7b", //fait
+      "service-reexpedition": "price_1RSLlyQ5vrwB5bWyTf2ay5tf", //fait
+      "service-scan": "price_1RSLmKQ5vrwB5bWyRouPTXPR", //fait
+      "service-colis": "price_1RSLmcQ5vrwB5bWyeWckoEPg", //fait
+      "coworking-space": "price_1RSMKlQ5vrwB5bWyTH1NrRlA", //fait
+      "location-bureau": "price_1RSMLjQ5vrwB5bWyUerVSlHF", //fait
+      "formation-room": "price_1RSMLIQ5vrwB5bWysp4JTZZQ", //fait
+      "domiciliation-1an-entreprise": "price_1RSLi2Q5vrwB5bWyeizWaoWy", //fait
+      "domiciliation-3mois-entreprise": "price_1RSLinQ5vrwB5bWyYpgyzSyL", //fait
+      "domiciliation-3mois-micro": "price_1RSLjPQ5vrwB5bWyoNy1OKMb", //fait
+      "domiciliation-6mois-entreprise": "price_1RSLkAQ5vrwB5bWyk4rjnkyb", //fait
+      "domiciliation-6mois-micro": "price_1RSLkfQ5vrwB5bWymj0lkM4Z", //fait
+      "pack-domine": "price_1RSLlCQ5vrwB5bWyqOByLGS5", //fait
+      "vtc-creation": "price_1RSLnfQ5vrwB5bWy7D4g1s1M", //fait
+      "bank-account": "price_1RSLo4Q5vrwB5bWyqaPfyWN0", //fait
+      "company-creation": "price_1RSLoRQ5vrwB5bWyLbVvOhhe", //fait
+      "micro-company": "price_1RSLozQ5vrwB5bWyhXZaREUE", //fait
+      "company-transfer": "price_1RSLpLQ5vrwB5bWyFdN0Wljp", //fait
+      "share-transfer": "price_1RSLpjQ5vrwB5bWynvYt7DzQ", //fait
+      "commercial-ad": "price_1RSLqCQ5vrwB5bWyabANz81P", //fait
+      "quote-creation": "price_1RSLqdQ5vrwB5bWyuMOQBt2h", //fait
+      "annual-accounts": "price_1RSLqzQ5vrwB5bWyp2PPrbP2", //fait
+      "company-modification": "price_1RSLrMQ5vrwB5bWyqYeVbL0c", //fait
     };
     return map[productId];
   };

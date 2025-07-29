@@ -205,7 +205,7 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
           .signatures-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 50px;
           }
 
           .signature-block {
@@ -494,6 +494,10 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
               </ul>
             </div>
           </div>
+          <div class="footer">
+            28 Rue de l'église, 95170 Deuil-la-Barre • <a href="lys-and-co.com" class="black">lys-and-co.com</a> • contact@lys-and-co.com<br/>
+            Tél : 09.53.42.11.63 • Agrément : 04_95_2023 • © 2025 Lys & Co
+          </div>
         </div>
 
         <!-- Page 4 -->
@@ -553,6 +557,10 @@ const ContractGenerator: React.FC<ContractGeneratorProps> = ({ data }) => {
               <p>En cas de résiliation, le Domicilié s'engage à modifier l'adresse de son siège social 
               dans un délai de 15 jours.</p>
             </div>
+          </div>
+          <div class="footer">
+            28 Rue de l'église, 95170 Deuil-la-Barre • <a href="lys-and-co.com" class="black">lys-and-co.com</a> • contact@lys-and-co.com<br/>
+            Tél : 09.53.42.11.63 • Agrément : 04_95_2023 • © 2025 Lys & Co
           </div>
         </div>
 

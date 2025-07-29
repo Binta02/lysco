@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/Collapsible.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1752699792766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752737832660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import { PropsWithChildren, useState } from \"react\";\n import { StyleSheet, TouchableOpacity } from \"react-native\";\n \n import { Colors } from \"@/constants/Colors\";\n-import { useColorScheme } from \"@/hooks/useColorScheme\";\n import { ThemedText } from \"@/src/components/ThemedText\";\n import { ThemedView } from \"@/src/components/ThemedView\";\n-import { IconSymbol } from \"@/src/components/ui/IconSymbol\";\n+import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n+import { IconSymbol } from \"@/src/hooks/useColorSchemebol\";\n \n export function Collapsible({\n   children,\n   title,\n"
+                },
+                {
+                    "date": 1752737934827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n import { Colors } from \"@/constants/Colors\";\n import { ThemedText } from \"@/src/components/ThemedText\";\n import { ThemedView } from \"@/src/components/ThemedView\";\n+import { IconSymbol } from \"@/src/components/ui/IconSymbol\";\n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n-import { IconSymbol } from \"@/src/hooks/useColorSchemebol\";\n \n export function Collapsible({\n   children,\n   title,\n"
+                }
+            ],
+            "date": 1752699792766,
+            "name": "Commit-0",
+            "content": "import { PropsWithChildren, useState } from \"react\";\nimport { StyleSheet, TouchableOpacity } from \"react-native\";\n\nimport { Colors } from \"@/constants/Colors\";\nimport { useColorScheme } from \"@/hooks/useColorScheme\";\nimport { ThemedText } from \"@/src/components/ThemedText\";\nimport { ThemedView } from \"@/src/components/ThemedView\";\nimport { IconSymbol } from \"@/src/components/ui/IconSymbol\";\n\nexport function Collapsible({\n  children,\n  title,\n}: PropsWithChildren & { title: string }) {\n  const [isOpen, setIsOpen] = useState(false);\n  const theme = useColorScheme() ?? \"light\";\n\n  return (\n    <ThemedView>\n      <TouchableOpacity\n        style={styles.heading}\n        onPress={() => setIsOpen((value) => !value)}\n        activeOpacity={0.8}\n      >\n        <IconSymbol\n          name=\"chevron.right\"\n          size={18}\n          weight=\"medium\"\n          color={theme === \"light\" ? Colors.light.icon : Colors.dark.icon}\n          style={{ transform: [{ rotate: isOpen ? \"90deg\" : \"0deg\" }] }}\n        />\n\n        <ThemedText type=\"defaultSemiBold\">{title}</ThemedText>\n      </TouchableOpacity>\n      {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}\n    </ThemedView>\n  );\n}\n\nconst styles = StyleSheet.create({\n  heading: {\n    flexDirection: \"row\",\n    alignItems: \"center\",\n    gap: 6,\n  },\n  content: {\n    marginTop: 6,\n    marginLeft: 24,\n  },\n});\n"
+        }
+    ]
+}

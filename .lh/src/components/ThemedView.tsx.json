@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/ThemedView.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752699794680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752699794680,
+            "name": "Commit-0",
+            "content": "import { View, type ViewProps } from \"react-native\";\n\nimport { useThemeColor } from \"@/src/hooks/useThemeColor\";\n\nexport type ThemedViewProps = ViewProps & {\n  lightColor?: string;\n  darkColor?: string;\n};\n\nexport function ThemedView({\n  style,\n  lightColor,\n  darkColor,\n  ...otherProps\n}: ThemedViewProps) {\n  const backgroundColor = useThemeColor(\n    { light: lightColor, dark: darkColor },\n    \"background\"\n  );\n\n  return <View style={[{ backgroundColor }, style]} {...otherProps} />;\n}\n"
+        }
+    ]
+}

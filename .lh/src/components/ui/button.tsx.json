@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/ui/button.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752743690130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752743690130,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport {\r\n  ActivityIndicator,\r\n  StyleSheet,\r\n  Text,\r\n  TouchableOpacity,\r\n} from \"react-native\";\r\n\r\ntype Variant =\r\n  | \"default\"\r\n  | \"destructive\"\r\n  | \"outline\"\r\n  | \"secondary\"\r\n  | \"ghost\"\r\n  | \"link\";\r\ntype Size = \"default\" | \"sm\" | \"lg\" | \"icon\";\r\n\r\ninterface ButtonProps {\r\n  variant?: Variant;\r\n  size?: Size;\r\n  loading?: boolean;\r\n  onPress?: () => void;\r\n  children: React.ReactNode;\r\n}\r\n\r\nexport const Button: React.FC<ButtonProps> = ({\r\n  variant = \"default\",\r\n  size = \"default\",\r\n  loading = false,\r\n  onPress,\r\n  children,\r\n}) => {\r\n  const variantStyle = variantStyles[variant] || {};\r\n  const sizeStyle = sizeStyles[size] || {};\r\n\r\n  return (\r\n    <TouchableOpacity\r\n      style={[styles.button, variantStyle, sizeStyle]}\r\n      onPress={onPress}\r\n      disabled={loading}\r\n      activeOpacity={0.7}\r\n    >\r\n      {loading ? (\r\n        <ActivityIndicator color=\"#fff\" />\r\n      ) : (\r\n        <Text style={styles.text}>{children}</Text>\r\n      )}\r\n    </TouchableOpacity>\r\n  );\r\n};\r\n\r\nconst styles = StyleSheet.create({\r\n  button: {\r\n    borderRadius: 8,\r\n    justifyContent: \"center\",\r\n    alignItems: \"center\",\r\n  },\r\n  text: {\r\n    color: \"#fff\",\r\n    fontWeight: \"bold\",\r\n  },\r\n});\r\n\r\nconst variantStyles: Record<Variant, object> = {\r\n  default: { backgroundColor: \"#4f46e5\" }, // Indigo 600\r\n  destructive: { backgroundColor: \"#dc2626\" }, // Red 600\r\n  outline: {\r\n    backgroundColor: \"transparent\",\r\n    borderWidth: 1,\r\n    borderColor: \"#4f46e5\",\r\n  },\r\n  secondary: { backgroundColor: \"#6b7280\" }, // Gray 500\r\n  ghost: { backgroundColor: \"transparent\" },\r\n  link: { backgroundColor: \"transparent\" },\r\n};\r\n\r\nconst sizeStyles: Record<Size, object> = {\r\n  default: { height: 40, paddingHorizontal: 16 },\r\n  sm: { height: 36, paddingHorizontal: 12 },\r\n  lg: { height: 48, paddingHorizontal: 24 },\r\n  icon: { height: 40, width: 40 },\r\n};\r\n"
+        }
+    ]
+}

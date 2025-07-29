@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/communication/CommunicationFAQ.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752950294469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752950294469,
+            "name": "Commit-0",
+            "content": "import { communicationFAQ } from \"@/src/data/communicationFAQ\";\r\nimport { MaterialCommunityIcons } from \"@expo/vector-icons\";\r\nimport React, { useState } from \"react\";\r\nimport {\r\n  FlatList,\r\n  LayoutAnimation,\r\n  Platform,\r\n  StyleSheet,\r\n  Text,\r\n  TouchableOpacity,\r\n  UIManager,\r\n  View,\r\n} from \"react-native\";\r\n\r\n// Activer LayoutAnimation sur Android\r\nif (\r\n  Platform.OS === \"android\" &&\r\n  UIManager.setLayoutAnimationEnabledExperimental\r\n) {\r\n  UIManager.setLayoutAnimationEnabledExperimental(true);\r\n}\r\n\r\nconst CommunicationFAQ = () => {\r\n  const [activeIndex, setActiveIndex] = useState<number | null>(null);\r\n\r\n  const toggleItem = (index: number) => {\r\n    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);\r\n    setActiveIndex(activeIndex === index ? null : index);\r\n  };\r\n\r\n  return (\r\n    <View style={styles.container}>\r\n      <View style={styles.header}>\r\n        <MaterialCommunityIcons\r\n          name=\"message-text-outline\"\r\n          size={28}\r\n          color=\"#5cb9bc\"\r\n        />\r\n        <Text style={styles.title}>Questions & Réponses</Text>\r\n      </View>\r\n\r\n      <FlatList\r\n        data={communicationFAQ}\r\n        keyExtractor={(_, index) => index.toString()}\r\n        renderItem={({ item, index }) => (\r\n          <View style={styles.card}>\r\n            <TouchableOpacity\r\n              onPress={() => toggleItem(index)}\r\n              style={styles.trigger}\r\n            >\r\n              <Text style={styles.question}>{item.question}</Text>\r\n            </TouchableOpacity>\r\n            {activeIndex === index && (\r\n              <Text style={styles.answer}>{item.answer}</Text>\r\n            )}\r\n          </View>\r\n        )}\r\n      />\r\n    </View>\r\n  );\r\n};\r\n\r\nexport default CommunicationFAQ;\r\n\r\nconst styles = StyleSheet.create({\r\n  container: { padding: 16, backgroundColor: \"#fff\", flex: 1 },\r\n  header: { flexDirection: \"row\", alignItems: \"center\", marginBottom: 16 },\r\n  title: { fontSize: 24, fontWeight: \"bold\", marginLeft: 8, color: \"#0f172a\" },\r\n  card: {\r\n    backgroundColor: \"#fff\",\r\n    borderRadius: 8,\r\n    borderWidth: 1,\r\n    borderColor: \"#e5e7eb\",\r\n    marginBottom: 12,\r\n    padding: 12,\r\n  },\r\n  trigger: {\r\n    flexDirection: \"row\",\r\n    justifyContent: \"space-between\",\r\n    alignItems: \"center\",\r\n  },\r\n  question: { fontSize: 16, fontWeight: \"500\", color: \"#374151\" },\r\n  answer: { marginTop: 8, color: \"#6b7280\" },\r\n});\r\n"
+        }
+    ]
+}

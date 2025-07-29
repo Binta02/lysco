@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/(tabs)/Communication.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1752948190558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752948243389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,22 +3,23 @@\n import CommunicationFAQ from \"@/src/components/communication/CommunicationFAQ\";\r\n import CommunicationHero from \"@/src/components/communication/CommunicationHero\";\r\n import CommunicationServices from \"@/src/components/communication/CommunicationServices\";\r\n import React from \"react\";\r\n+import { Text, View } from \"react-native\";\r\n \r\n const Communication = () => {\r\n   const [session, setSession] = React.useState(null);\r\n   const [menuOpen, setMenuOpen] = React.useState(false);\r\n   return (\r\n-    <div className=\"min-h-screen flex flex-col\">\r\n+    <View style={{ flex: 1 }}>\r\n       <Navbar session={session} onToggleMenu={() => setMenuOpen(!menuOpen)} />\r\n-      <main className=\"flex-1\">\r\n+      <Text className=\"flex-1\">\r\n         <CommunicationHero />\r\n         <CommunicationServices />\r\n         <CommunicationFAQ />\r\n-      </main>\r\n+      </Text>\r\n       <Footer />\r\n-    </div>\r\n+    </View>\r\n   );\r\n };\r\n \r\n export default Communication;\r\n"
+                },
+                {
+                    "date": 1752948386941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,23 +3,32 @@\n import CommunicationFAQ from \"@/src/components/communication/CommunicationFAQ\";\r\n import CommunicationHero from \"@/src/components/communication/CommunicationHero\";\r\n import CommunicationServices from \"@/src/components/communication/CommunicationServices\";\r\n import React from \"react\";\r\n-import { Text, View } from \"react-native\";\r\n+import { ScrollView, StyleSheet, View } from \"react-native\";\r\n \r\n const Communication = () => {\r\n   const [session, setSession] = React.useState(null);\r\n   const [menuOpen, setMenuOpen] = React.useState(false);\r\n   return (\r\n     <View style={{ flex: 1 }}>\r\n       <Navbar session={session} onToggleMenu={() => setMenuOpen(!menuOpen)} />\r\n-      <Text className=\"flex-1\">\r\n+      <ScrollView\r\n+        style={styles.container1}\r\n+        contentContainerStyle={{ flexGrow: 1, justifyContent: \"space-between\" }}\r\n+      >\r\n+        {\" \"}\r\n         <CommunicationHero />\r\n         <CommunicationServices />\r\n         <CommunicationFAQ />\r\n-      </Text>\r\n+      </ScrollView>\r\n       <Footer />\r\n     </View>\r\n   );\r\n };\r\n-\r\n+const styles = StyleSheet.create({\r\n+  container1: {\r\n+    backgroundColor: \"#f9fafb\",\r\n+    flex: 1,\r\n+  },\r\n+});\r\n export default Communication;\r\n"
+                },
+                {
+                    "date": 1753018944540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   const [session, setSession] = React.useState(null);\r\n   const [menuOpen, setMenuOpen] = React.useState(false);\r\n   return (\r\n     <View style={{ flex: 1 }}>\r\n-      <Navbar session={session} onToggleMenu={() => setMenuOpen(!menuOpen)} />\r\n+      <Navbar/>\r\n       <ScrollView\r\n         style={styles.container1}\r\n         contentContainerStyle={{ flexGrow: 1, justifyContent: \"space-between\" }}\r\n       >\r\n"
+                },
+                {
+                    "date": 1753019620927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n   const [session, setSession] = React.useState(null);\r\n   const [menuOpen, setMenuOpen] = React.useState(false);\r\n   return (\r\n     <View style={{ flex: 1 }}>\r\n-      <Navbar />\r\n       <ScrollView\r\n         style={styles.container1}\r\n         contentContainerStyle={{ flexGrow: 1, justifyContent: \"space-between\" }}\r\n       >\r\n"
+                },
+                {
+                    "date": 1753019926847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,11 @@\n         {\" \"}\r\n         <CommunicationHero />\r\n         <CommunicationServices />\r\n         <CommunicationFAQ />\r\n+              <Footer />\r\n+\r\n       </ScrollView>\r\n-      <Footer />\r\n     </View>\r\n   );\r\n };\r\n const styles = StyleSheet.create({\r\n"
+                }
+            ],
+            "date": 1752948190558,
+            "name": "Commit-0",
+            "content": "import Footer from \"@/src/components/Footer\";\r\nimport Navbar from \"@/src/components/Navbar\";\r\nimport CommunicationFAQ from \"@/src/components/communication/CommunicationFAQ\";\r\nimport CommunicationHero from \"@/src/components/communication/CommunicationHero\";\r\nimport CommunicationServices from \"@/src/components/communication/CommunicationServices\";\r\nimport React from \"react\";\r\n\r\nconst Communication = () => {\r\n  const [session, setSession] = React.useState(null);\r\n  const [menuOpen, setMenuOpen] = React.useState(false);\r\n  return (\r\n    <div className=\"min-h-screen flex flex-col\">\r\n      <Navbar session={session} onToggleMenu={() => setMenuOpen(!menuOpen)} />\r\n      <main className=\"flex-1\">\r\n        <CommunicationHero />\r\n        <CommunicationServices />\r\n        <CommunicationFAQ />\r\n      </main>\r\n      <Footer />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Communication;\r\n"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "app/_layout.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1752699794642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752737502892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n } from \"@react-navigation/native\";\n import { useFonts } from \"expo-font\";\n import { Stack } from \"expo-router\";\n import { StatusBar } from \"expo-status-bar\";\n-import \"react-native-reanimated\";\n+// import \"react-native-reanimated\";\n \n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n \n export default function RootLayout() {\n"
+                },
+                {
+                    "date": 1752737529178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n } from \"@react-navigation/native\";\n import { useFonts } from \"expo-font\";\n import { Stack } from \"expo-router\";\n import { StatusBar } from \"expo-status-bar\";\n-// import \"react-native-reanimated\";\n+import \"react-native-reanimated\";\n \n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n \n export default function RootLayout() {\n"
+                },
+                {
+                    "date": 1752866072054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { CartProvider } from \"@/src/components/cart/CartContext\";\n import {\n   DarkTheme,\n   DefaultTheme,\n   ThemeProvider,\n@@ -22,12 +23,16 @@\n   }\n \n   return (\n     <ThemeProvider value={colorScheme === \"dark\" ? DarkTheme : DefaultTheme}>\n-      <Stack>\n-        <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n-        <Stack.Screen name=\"+not-found\" />\n-      </Stack>\n+      <CartProvider>\n+        {\" \"}\n+        {/* ✅ On enveloppe toute l'app */}\n+        <Stack>\n+          <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n+          <Stack.Screen name=\"+not-found\" />\n+        </Stack>\n+      </CartProvider>\n       <StatusBar style=\"auto\" />\n     </ThemeProvider>\n   );\n }\n"
+                },
+                {
+                    "date": 1752953675263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import { useFonts } from \"expo-font\";\n import { Stack } from \"expo-router\";\n import { StatusBar } from \"expo-status-bar\";\n import \"react-native-reanimated\";\n+import Toast from \"react-native-toast-message\";\n \n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n \n export default function RootLayout() {\n@@ -31,8 +32,10 @@\n           <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n           <Stack.Screen name=\"+not-found\" />\n         </Stack>\n       </CartProvider>\n+      <Toast />\n+\n       <StatusBar style=\"auto\" />\n     </ThemeProvider>\n   );\n }\n"
+                },
+                {
+                    "date": 1752953704969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,8 @@\n           <Stack.Screen name=\"+not-found\" />\n         </Stack>\n       </CartProvider>\n       <Toast />\n-\n       <StatusBar style=\"auto\" />\n     </ThemeProvider>\n   );\n }\n"
+                },
+                {
+                    "date": 1752962178856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+// ✅ Patch pour structuredClone si absent (par ex. dans Hermes / Expo Go / vieux env)\n+if (typeof globalThis.structuredClone !== \"function\") {\n+  globalThis.structuredClone = (obj) => JSON.parse(JSON.stringify(obj));\n+}\n+\n import { CartProvider } from \"@/src/components/cart/CartContext\";\n import {\n   DarkTheme,\n   DefaultTheme,\n@@ -18,17 +23,14 @@\n     SpaceMono: require(\"../assets/fonts/SpaceMono-Regular.ttf\"),\n   });\n \n   if (!loaded) {\n-    // Async font loading only occurs in development.\n     return null;\n   }\n \n   return (\n     <ThemeProvider value={colorScheme === \"dark\" ? DarkTheme : DefaultTheme}>\n       <CartProvider>\n-        {\" \"}\n-        {/* ✅ On enveloppe toute l'app */}\n         <Stack>\n           <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n           <Stack.Screen name=\"+not-found\" />\n         </Stack>\n"
+                },
+                {
+                    "date": 1753019290524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n import \"react-native-reanimated\";\n import Toast from \"react-native-toast-message\";\n \n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n+import Navbar from \"@/src/components/Navbar\";\n \n export default function RootLayout() {\n   const colorScheme = useColorScheme();\n   const [loaded] = useFonts({\n@@ -28,9 +29,12 @@\n   }\n \n   return (\n     <ThemeProvider value={colorScheme === \"dark\" ? DarkTheme : DefaultTheme}>\n+            <Navbar />\n+\n       <CartProvider>\n+\n         <Stack>\n           <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n           <Stack.Screen name=\"+not-found\" />\n         </Stack>\n"
+                },
+                {
+                    "date": 1753019441038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n import Toast from \"react-native-toast-message\";\n \n import Navbar from \"@/src/components/Navbar\";\n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n+import { Provider as PaperProvider } from 'react-native-paper';\n \n+\n export default function RootLayout() {\n   const colorScheme = useColorScheme();\n   const [loaded] = useFonts({\n     SpaceMono: require(\"../assets/fonts/SpaceMono-Regular.ttf\"),\n"
+                },
+                {
+                    "date": 1753019507631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n import Toast from \"react-native-toast-message\";\n \n import Navbar from \"@/src/components/Navbar\";\n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n+import { Portal, Provider as PaperProvider } from 'react-native-paper';\n \n+\n export default function RootLayout() {\n   const colorScheme = useColorScheme();\n   const [loaded] = useFonts({\n     SpaceMono: require(\"../assets/fonts/SpaceMono-Regular.ttf\"),\n@@ -29,17 +31,18 @@\n   }\n \n   return (\n     <ThemeProvider value={colorScheme === \"dark\" ? DarkTheme : DefaultTheme}>\n+<PaperProvider>\n       <Navbar />\n-\n       <CartProvider>\n         <Stack>\n           <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n           <Stack.Screen name=\"+not-found\" />\n         </Stack>\n       </CartProvider>\n       <Toast />\n       <StatusBar style=\"auto\" />\n+      </PaperProvider>\n     </ThemeProvider>\n   );\n }\n"
+                }
+            ],
+            "date": 1752699794642,
+            "name": "Commit-0",
+            "content": "import {\n  DarkTheme,\n  DefaultTheme,\n  ThemeProvider,\n} from \"@react-navigation/native\";\nimport { useFonts } from \"expo-font\";\nimport { Stack } from \"expo-router\";\nimport { StatusBar } from \"expo-status-bar\";\nimport \"react-native-reanimated\";\n\nimport { useColorScheme } from \"@/src/hooks/useColorScheme\";\n\nexport default function RootLayout() {\n  const colorScheme = useColorScheme();\n  const [loaded] = useFonts({\n    SpaceMono: require(\"../assets/fonts/SpaceMono-Regular.ttf\"),\n  });\n\n  if (!loaded) {\n    // Async font loading only occurs in development.\n    return null;\n  }\n\n  return (\n    <ThemeProvider value={colorScheme === \"dark\" ? DarkTheme : DefaultTheme}>\n      <Stack>\n        <Stack.Screen name=\"(tabs)\" options={{ headerShown: false }} />\n        <Stack.Screen name=\"+not-found\" />\n      </Stack>\n      <StatusBar style=\"auto\" />\n    </ThemeProvider>\n  );\n}\n"
+        }
+    ]
+}

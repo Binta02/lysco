@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/ThemedText.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752699794656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752699794656,
+            "name": "Commit-0",
+            "content": "import { StyleSheet, Text, type TextProps } from \"react-native\";\n\nimport { useThemeColor } from \"@/src/hooks/useThemeColor\";\n\nexport type ThemedTextProps = TextProps & {\n  lightColor?: string;\n  darkColor?: string;\n  type?: \"default\" | \"title\" | \"defaultSemiBold\" | \"subtitle\" | \"link\";\n};\n\nexport function ThemedText({\n  style,\n  lightColor,\n  darkColor,\n  type = \"default\",\n  ...rest\n}: ThemedTextProps) {\n  const color = useThemeColor({ light: lightColor, dark: darkColor }, \"text\");\n\n  return (\n    <Text\n      style={[\n        { color },\n        type === \"default\" ? styles.default : undefined,\n        type === \"title\" ? styles.title : undefined,\n        type === \"defaultSemiBold\" ? styles.defaultSemiBold : undefined,\n        type === \"subtitle\" ? styles.subtitle : undefined,\n        type === \"link\" ? styles.link : undefined,\n        style,\n      ]}\n      {...rest}\n    />\n  );\n}\n\nconst styles = StyleSheet.create({\n  default: {\n    fontSize: 16,\n    lineHeight: 24,\n  },\n  defaultSemiBold: {\n    fontSize: 16,\n    lineHeight: 24,\n    fontWeight: \"600\",\n  },\n  title: {\n    fontSize: 32,\n    fontWeight: \"bold\",\n    lineHeight: 32,\n  },\n  subtitle: {\n    fontSize: 20,\n    fontWeight: \"bold\",\n  },\n  link: {\n    lineHeight: 30,\n    fontSize: 16,\n    color: \"#0a7ea4\",\n  },\n});\n"
+        }
+    ]
+}

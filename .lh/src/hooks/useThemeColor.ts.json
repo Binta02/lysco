@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/hooks/useThemeColor.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752699794249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752699794249,
+            "name": "Commit-0",
+            "content": "/**\n * Learn more about light and dark modes:\n * https://docs.expo.dev/guides/color-schemes/\n */\n\nimport { Colors } from '@/constants/Colors';\nimport { useColorScheme } from '@/src/hooks/useColorScheme';\n\nexport function useThemeColor(\n  props: { light?: string; dark?: string },\n  colorName: keyof typeof Colors.light & keyof typeof Colors.dark\n) {\n  const theme = useColorScheme() ?? 'light';\n  const colorFromProps = props[theme];\n\n  if (colorFromProps) {\n    return colorFromProps;\n  } else {\n    return Colors[theme][colorName];\n  }\n}\n"
+        }
+    ]
+}

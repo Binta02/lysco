@@ -1,0 +1,34 @@
+{
+    "sourceFile": "tsconfig.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1752700300384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752744872254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+{\n+  \"compilerOptions\": {\n+    \"target\": \"esnext\",\n+    \"module\": \"esnext\",\n+    \"lib\": [\n+      \"dom\",\n+      \"esnext\"\n+    ],\n+    \"allowJs\": true,\n+    \"skipLibCheck\": true,\n+    \"esModuleInterop\": true,\n+    \"allowSyntheticDefaultImports\": true,\n+    \"strict\": true,\n+    \"forceConsistentCasingInFileNames\": true,\n+    \"noEmit\": true,\n+    \"isolatedModules\": true,\n+\"moduleResolution\": \"nodenext\",\n+    \"resolveJsonModule\": true,\n+    \"jsx\": \"react-native\",\n+    \"paths\": {\n+      \"@/*\": [\n+        \"./*\"\n+      ]\n+    }\n+  },\n+  \"include\": [\n+    \"**/*.ts\",\n+    \"**/*.tsx\",\n+    \".expo/types/**/*.ts\",\n+    \"expo-env.d.ts\"\n+  ],\n+  \"extends\": \"expo/tsconfig.base\"\n+}\n"
+                },
+                {
+                    "date": 1752744880449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     \"strict\": true,\n     \"forceConsistentCasingInFileNames\": true,\n     \"noEmit\": true,\n     \"isolatedModules\": true,\n-\"moduleResolution\": \"nodenext\",\n+    \"moduleResolution\": \"nodenext\",\n     \"resolveJsonModule\": true,\n     \"jsx\": \"react-native\",\n     \"paths\": {\n       \"@/*\": [\n@@ -30,26 +30,4 @@\n     \"expo-env.d.ts\"\n   ],\n   \"extends\": \"expo/tsconfig.base\"\n }\n-{\n-  \"compilerOptions\": {\n-    \"target\": \"esnext\",\n-    \"module\": \"esnext\",\n-    \"lib\": [\"dom\", \"esnext\"],\n-    \"allowJs\": true,\n-    \"skipLibCheck\": true,\n-    \"esModuleInterop\": true,\n-    \"allowSyntheticDefaultImports\": true,\n-    \"strict\": true,\n-    \"forceConsistentCasingInFileNames\": true,\n-    \"noEmit\": true,\n-    \"isolatedModules\": true,\n-    \"moduleResolution\": \"node\",\n-    \"resolveJsonModule\": true,\n-    \"jsx\": \"react-native\",\n-    \"paths\": {\n-      \"@/*\": [\"./*\"]\n-    }\n-  },\n-  \"include\": [\"**/*.ts\", \"**/*.tsx\"]\n-}\n"
+                },
+                {
+                    "date": 1752745612974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,23 @@\n {\n   \"compilerOptions\": {\n     \"target\": \"esnext\",\n-    \"module\": \"esnext\",\n-    \"lib\": [\n-      \"dom\",\n-      \"esnext\"\n-    ],\n+    \"module\": \"nodenext\",  // 👈 obligatoire si moduleResolution = nodenext\n+    \"lib\": [\"dom\", \"esnext\"],\n     \"allowJs\": true,\n     \"skipLibCheck\": true,\n     \"esModuleInterop\": true,\n     \"allowSyntheticDefaultImports\": true,\n     \"strict\": true,\n     \"forceConsistentCasingInFileNames\": true,\n     \"noEmit\": true,\n     \"isolatedModules\": true,\n-    \"moduleResolution\": \"nodenext\",\n+    \"moduleResolution\": \"nodenext\",  // 👈 tu avais raison de le mettre, mais il faut adapter `module`\n     \"resolveJsonModule\": true,\n     \"jsx\": \"react-native\",\n+    \"types\": [\"react-native\"],  // 👈 ajoute ça pour forcer les types natifs\n     \"paths\": {\n-      \"@/*\": [\n-        \"./*\"\n-      ]\n+      \"@/*\": [\"./*\"]\n     }\n   },\n   \"include\": [\n     \"**/*.ts\",\n"
+                },
+                {
+                    "date": 1752959518577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n {\n   \"compilerOptions\": {\n     \"target\": \"esnext\",\n-    \"module\": \"nodenext\",  // 👈 obligatoire si moduleResolution = nodenext\n+    \"module\": \"nodenext\",\n     \"lib\": [\"dom\", \"esnext\"],\n     \"allowJs\": true,\n     \"skipLibCheck\": true,\n     \"esModuleInterop\": true,\n@@ -10,12 +10,12 @@\n     \"strict\": true,\n     \"forceConsistentCasingInFileNames\": true,\n     \"noEmit\": true,\n     \"isolatedModules\": true,\n-    \"moduleResolution\": \"nodenext\",  // 👈 tu avais raison de le mettre, mais il faut adapter `module`\n+    \"moduleResolution\": \"nodenext\",\n     \"resolveJsonModule\": true,\n     \"jsx\": \"react-native\",\n-    \"types\": [\"react-native\"],  // 👈 ajoute ça pour forcer les types natifs\n+    \"types\": [\"react-native\"],\n     \"paths\": {\n       \"@/*\": [\"./*\"]\n     }\n   },\n@@ -23,7 +23,6 @@\n     \"**/*.ts\",\n     \"**/*.tsx\",\n     \".expo/types/**/*.ts\",\n     \"expo-env.d.ts\"\n-  ],\n-  \"extends\": \"expo/tsconfig.base\"\n+  ]\n }\n"
+                }
+            ],
+            "date": 1752700300384,
+            "name": "Commit-0",
+            "content": "{\n  \"compilerOptions\": {\n    \"target\": \"esnext\",\n    \"module\": \"esnext\",\n    \"lib\": [\"dom\", \"esnext\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"esModuleInterop\": true,\n    \"allowSyntheticDefaultImports\": true,\n    \"strict\": true,\n    \"forceConsistentCasingInFileNames\": true,\n    \"noEmit\": true,\n    \"isolatedModules\": true,\n    \"moduleResolution\": \"node\",\n    \"resolveJsonModule\": true,\n    \"jsx\": \"react-native\",\n    \"paths\": {\n      \"@/*\": [\"./*\"]\n    }\n  },\n  \"include\": [\"**/*.ts\", \"**/*.tsx\"]\n}\n"
+        }
+    ]
+}

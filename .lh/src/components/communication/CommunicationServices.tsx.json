@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/components/communication/CommunicationServices.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1752950384414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1753020123118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   {\r\n     title: \"Stratégie\",\r\n     description:\r\n       \"Audit et accompagnement stratégique pour optimiser votre communication.\",\r\n-    link: \"/communication/strategie\",\r\n+    link: \"\",\r\n   },\r\n   {\r\n     title: \"Community Management\",\r\n     description: \"Gestion et animation de vos réseaux sociaux.\",\r\n@@ -48,9 +48,9 @@\n   },\r\n   {\r\n     title: \"Packs de Communication\",\r\n     description: \"Formules complètes pour démarrer ou booster.\",\r\n-    link: \"/communication/packs\",\r\n+    link: \"/(tabs)/communication/CommunicationPacks\",\r\n   },\r\n ];\r\n \r\n const CommunicationServices = () => {\r\n"
+                },
+                {
+                    "date": 1753020296226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,39 +13,39 @@\n   {\r\n     title: \"Stratégie\",\r\n     description:\r\n       \"Audit et accompagnement stratégique pour optimiser votre communication.\",\r\n-    link: \"\",\r\n+    link: \"/(tabs)/communication/CommunicationStrategie\",\r\n   },\r\n   {\r\n     title: \"Community Management\",\r\n     description: \"Gestion et animation de vos réseaux sociaux.\",\r\n-    link: \"/communication/community-management\",\r\n+    link: \"/(tabs)/communication/CommunicationCommunityManagement\",\r\n   },\r\n   {\r\n     title: \"Créations\",\r\n     description: \"Supports visuels sur mesure pour votre image.\",\r\n-    link: \"/communication/creations\",\r\n+    link: \"/(tabs)/communication/CommunicationCreations\",\r\n   },\r\n   {\r\n     title: \"Communication Print\",\r\n     description: \"Cartes de visites, flyers, brochures, etc.\",\r\n-    link: \"/communication/print\",\r\n+    link: \"/(tabs)/communication/CommunicationPrint\",\r\n   },\r\n   {\r\n     title: \"Site Internet\",\r\n     description: \"Conception et refonte de votre site web.\",\r\n-    link: \"/communication/site-internet\",\r\n+    link: \"/(tabs)/communication/CommunicationSiteInternet\",\r\n   },\r\n   {\r\n     title: \"Photos\",\r\n     description: \"Shooting professionnel produit ou personnel.\",\r\n-    link: \"/communication/photos\",\r\n+    link: \"/(tabs)/communication/CommunicationPhotos\",\r\n   },\r\n   {\r\n     title: \"Media Training\",\r\n     description: \"Formations à la prise de parole en public.\",\r\n-    link: \"/communication/media-training\",\r\n+    link: \"/(tabs)/communication/CommunicationMediaTraining\",\r\n   },\r\n   {\r\n     title: \"Packs de Communication\",\r\n     description: \"Formules complètes pour démarrer ou booster.\",\r\n"
+                },
+                {
+                    "date": 1753121257618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,8 +88,9 @@\n const styles = StyleSheet.create({\r\n   container: {\r\n     paddingVertical: 32,\r\n     paddingHorizontal: 16,\r\n+    padding: 16,\r\n     backgroundColor: \"#fff\",\r\n   },\r\n   title: {\r\n     fontSize: 22,\r\n"
+                },
+                {
+                    "date": 1753121266931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,10 +86,10 @@\n export default CommunicationServices;\r\n \r\n const styles = StyleSheet.create({\r\n   container: {\r\n-    paddingVertical: 32,\r\n-    paddingHorizontal: 16,\r\n+    // paddingVertical: 32,\r\n+    // paddingHorizontal: 16,\r\n     padding: 16,\r\n     backgroundColor: \"#fff\",\r\n   },\r\n   title: {\r\n"
+                },
+                {
+                    "date": 1753121293374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,11 +86,10 @@\n export default CommunicationServices;\r\n \r\n const styles = StyleSheet.create({\r\n   container: {\r\n-    // paddingVertical: 32,\r\n-    // paddingHorizontal: 16,\r\n-    padding: 16,\r\n+    paddingVertical: 32,\r\n+    paddingHorizontal: 16,\r\n     backgroundColor: \"#fff\",\r\n   },\r\n   title: {\r\n     fontSize: 22,\r\n"
+                },
+                {
+                    "date": 1753121317503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,8 +101,9 @@\n   grid: {\r\n     flexDirection: \"row\",\r\n     flexWrap: \"wrap\",\r\n     justifyContent: \"space-between\",\r\n+    padding:16\r\n   },\r\n   card: {\r\n     width: \"100%\",\r\n     backgroundColor: \"#f9fafb\",\r\n"
+                },
+                {
+                    "date": 1753121324761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n   grid: {\r\n     flexDirection: \"row\",\r\n     flexWrap: \"wrap\",\r\n     justifyContent: \"space-between\",\r\n-    padding: 16,\r\n+    padding: 66,\r\n   },\r\n   card: {\r\n     width: \"100%\",\r\n     backgroundColor: \"#f9fafb\",\r\n"
+                },
+                {
+                    "date": 1753121348496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,8 +89,9 @@\n   container: {\r\n     paddingVertical: 32,\r\n     paddingHorizontal: 16,\r\n     backgroundColor: \"#fff\",\r\n+    flex: 1,\r\n   },\r\n   title: {\r\n     fontSize: 22,\r\n     fontWeight: \"bold\",\r\n"
+                }
+            ],
+            "date": 1752950384414,
+            "name": "Commit-0",
+            "content": "import { MaterialCommunityIcons } from \"@expo/vector-icons\";\r\nimport { useRouter } from \"expo-router\";\r\nimport React from \"react\";\r\nimport {\r\n  ScrollView,\r\n  StyleSheet,\r\n  Text,\r\n  TouchableOpacity,\r\n  View,\r\n} from \"react-native\";\r\n\r\nconst services = [\r\n  {\r\n    title: \"Stratégie\",\r\n    description:\r\n      \"Audit et accompagnement stratégique pour optimiser votre communication.\",\r\n    link: \"/communication/strategie\",\r\n  },\r\n  {\r\n    title: \"Community Management\",\r\n    description: \"Gestion et animation de vos réseaux sociaux.\",\r\n    link: \"/communication/community-management\",\r\n  },\r\n  {\r\n    title: \"Créations\",\r\n    description: \"Supports visuels sur mesure pour votre image.\",\r\n    link: \"/communication/creations\",\r\n  },\r\n  {\r\n    title: \"Communication Print\",\r\n    description: \"Cartes de visites, flyers, brochures, etc.\",\r\n    link: \"/communication/print\",\r\n  },\r\n  {\r\n    title: \"Site Internet\",\r\n    description: \"Conception et refonte de votre site web.\",\r\n    link: \"/communication/site-internet\",\r\n  },\r\n  {\r\n    title: \"Photos\",\r\n    description: \"Shooting professionnel produit ou personnel.\",\r\n    link: \"/communication/photos\",\r\n  },\r\n  {\r\n    title: \"Media Training\",\r\n    description: \"Formations à la prise de parole en public.\",\r\n    link: \"/communication/media-training\",\r\n  },\r\n  {\r\n    title: \"Packs de Communication\",\r\n    description: \"Formules complètes pour démarrer ou booster.\",\r\n    link: \"/communication/packs\",\r\n  },\r\n];\r\n\r\nconst CommunicationServices = () => {\r\n  const router = useRouter();\r\n\r\n  return (\r\n    <ScrollView style={styles.container}>\r\n      <Text style={styles.title}>Nos Prestations de Communication</Text>\r\n      <View style={styles.grid}>\r\n        {services.map((service, index) => (\r\n          <TouchableOpacity\r\n            key={index}\r\n            style={styles.card}\r\n            onPress={() => router.push(service.link as any)}\r\n          >\r\n            <Text style={styles.cardTitle}>{service.title}</Text>\r\n            <Text style={styles.cardDescription}>{service.description}</Text>\r\n            <View style={styles.buttonRow}>\r\n              <Text style={styles.buttonText}>En savoir plus</Text>\r\n              <MaterialCommunityIcons\r\n                name=\"arrow-right\"\r\n                size={16}\r\n                color=\"#5cb9bc\"\r\n              />\r\n            </View>\r\n          </TouchableOpacity>\r\n        ))}\r\n      </View>\r\n    </ScrollView>\r\n  );\r\n};\r\n\r\nexport default CommunicationServices;\r\n\r\nconst styles = StyleSheet.create({\r\n  container: {\r\n    paddingVertical: 32,\r\n    paddingHorizontal: 16,\r\n    backgroundColor: \"#fff\",\r\n  },\r\n  title: {\r\n    fontSize: 22,\r\n    fontWeight: \"bold\",\r\n    textAlign: \"center\",\r\n    marginBottom: 24,\r\n    color: \"#0f172a\",\r\n  },\r\n  grid: {\r\n    flexDirection: \"row\",\r\n    flexWrap: \"wrap\",\r\n    justifyContent: \"space-between\",\r\n  },\r\n  card: {\r\n    width: \"100%\",\r\n    backgroundColor: \"#f9fafb\",\r\n    padding: 16,\r\n    borderRadius: 12,\r\n    marginBottom: 16,\r\n    shadowColor: \"#000\",\r\n    shadowOpacity: 0.05,\r\n    shadowOffset: { width: 0, height: 2 },\r\n    elevation: 2,\r\n  },\r\n  cardTitle: {\r\n    fontSize: 18,\r\n    fontWeight: \"bold\",\r\n    marginBottom: 8,\r\n    color: \"#374151\",\r\n  },\r\n  cardDescription: {\r\n    fontSize: 14,\r\n    color: \"#6b7280\",\r\n    marginBottom: 12,\r\n  },\r\n  buttonRow: {\r\n    flexDirection: \"row\",\r\n    alignItems: \"center\",\r\n  },\r\n  buttonText: {\r\n    color: \"#5cb9bc\",\r\n    fontWeight: \"bold\",\r\n    marginRight: 4,\r\n  },\r\n});\r\n"
+        }
+    ]
+}

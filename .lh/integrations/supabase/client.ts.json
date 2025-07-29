@@ -1,0 +1,18 @@
+{
+    "sourceFile": "integrations/supabase/client.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1753133162586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1753133162586,
+            "name": "Commit-0",
+            "content": "import AsyncStorage from '@react-native-async-storage/async-storage';\r\nimport { createClient } from '@supabase/supabase-js';\r\nimport type { Database } from './types';\r\n\r\nconst SUPABASE_URL = \"https://ssbcjdlsvtwllumdphwy.supabase.co\";\r\nconst SUPABASE_PUBLISHABLE_KEY = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzYmNqZGxzdnR3bGx1bWRwaHd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzMTIyMDcsImV4cCI6MjA2MDg4ODIwN30.SXieFm0dRtykZBj0rEW0Tcd0-7L1kvlVWmOFeTMEAHQ\";\r\nAsyncStorage.getAllKeys().then(async (keys) => {\r\n  const stores = await AsyncStorage.multiGet(keys);\r\n});\r\nexport const supabase = createClient<Database>(\r\n  SUPABASE_URL,\r\n  SUPABASE_PUBLISHABLE_KEY,\r\n  {\r\n    auth: {\r\n      storage: AsyncStorage,          // ✅ IMPORTANT pour React Native\r\n      persistSession: true,\r\n      detectSessionInUrl: false,\r\n    },\r\n    global: {\r\n      fetch: fetch,\r\n    },\r\n  }\r\n);\r\n"
+        }
+    ]
+}

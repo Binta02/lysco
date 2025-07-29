@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/communication/CommunicationHero.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1752951149287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1753020069674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n           </TouchableOpacity>\r\n \r\n           <TouchableOpacity\r\n             style={[styles.buttonOutline, { borderColor: \"#5cb9bc\" }]}\r\n-            onPress={() => router.push(\"/\")}\r\n+            onPress={() => router.push(\"/(tabs)/communication/CommunicationPacks\")}\r\n           >\r\n             <Text style={[styles.buttonText, { color: \"#5cb9bc\" }]}>\r\n               Nos packs de communication\r\n             </Text>\r\n"
+                },
+                {
+                    "date": 1753020314377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,11 @@\n           </TouchableOpacity>\r\n \r\n           <TouchableOpacity\r\n             style={[styles.buttonOutline, { borderColor: \"#5cb9bc\" }]}\r\n-            onPress={() => router.push(\"/(tabs)/communication/CommunicationPacks\")}\r\n+            onPress={() =>\r\n+              router.push(\"/(tabs)/communication/CommunicationPacks\")\r\n+            }\r\n           >\r\n             <Text style={[styles.buttonText, { color: \"#5cb9bc\" }]}>\r\n               Nos packs de communication\r\n             </Text>\r\n"
+                }
+            ],
+            "date": 1752951149287,
+            "name": "Commit-0",
+            "content": "import { LinearGradient } from \"expo-linear-gradient\";\r\nimport { useRouter } from \"expo-router\";\r\nimport React from \"react\";\r\nimport { StyleSheet, Text, TouchableOpacity, View } from \"react-native\";\r\n\r\nconst CommunicationHero = () => {\r\n  const router = useRouter();\r\n\r\n  return (\r\n    <LinearGradient\r\n      colors={[\"#5cb9bc10\", \"#ec489910\"]}\r\n      style={styles.container}\r\n    >\r\n      <View style={styles.content}>\r\n        <Text style={styles.title}>NOS PRESTATIONS DE COMMUNICATION</Text>\r\n        <Text style={styles.paragraph}>\r\n          Experts en communication pour TPE/PME, nous vous accompagnons dans\r\n          tous les aspects de votre communication (digitale, print, orale, image\r\n          de marque) à des tarifs accessibles.\r\n        </Text>\r\n        <Text style={styles.paragraph}>\r\n          Notre équipe (rédacteurs, graphistes, webmasters, vidéastes…) analyse\r\n          vos besoins et pilote votre projet de A à Z.\r\n        </Text>\r\n\r\n        <View style={styles.buttonRow}>\r\n          <TouchableOpacity\r\n            style={[styles.button, { backgroundColor: \"#5cb9bc\" }]}\r\n            onPress={() => router.push(\"/(tabs)/Contact\")}\r\n          >\r\n            <Text style={styles.buttonText}>Prenez RDV !</Text>\r\n          </TouchableOpacity>\r\n\r\n          <TouchableOpacity\r\n            style={[styles.buttonOutline, { borderColor: \"#5cb9bc\" }]}\r\n            onPress={() => router.push(\"/\")}\r\n          >\r\n            <Text style={[styles.buttonText, { color: \"#5cb9bc\" }]}>\r\n              Nos packs de communication\r\n            </Text>\r\n          </TouchableOpacity>\r\n        </View>\r\n      </View>\r\n    </LinearGradient>\r\n  );\r\n};\r\n\r\nexport default CommunicationHero;\r\n\r\nconst styles = StyleSheet.create({\r\n  container: {\r\n    paddingVertical: 32,\r\n    paddingHorizontal: 16,\r\n  },\r\n  content: {\r\n    maxWidth: 600,\r\n    alignSelf: \"center\",\r\n    alignItems: \"center\",\r\n  },\r\n  title: {\r\n    fontSize: 24,\r\n    fontWeight: \"bold\",\r\n    textAlign: \"center\",\r\n    marginBottom: 16,\r\n    color: \"#0f172a\",\r\n  },\r\n  paragraph: {\r\n    textAlign: \"center\",\r\n    color: \"#475569\",\r\n    marginBottom: 8,\r\n  },\r\n  buttonRow: {\r\n    flexDirection: \"row\",\r\n    flexWrap: \"wrap\",\r\n    justifyContent: \"center\",\r\n    marginTop: 16,\r\n  },\r\n  button: {\r\n    backgroundColor: \"#5cb9bc\",\r\n    paddingVertical: 10,\r\n    paddingHorizontal: 20,\r\n    borderRadius: 24,\r\n    marginHorizontal: 4,\r\n    marginVertical: 4,\r\n  },\r\n  buttonOutline: {\r\n    borderWidth: 1,\r\n    paddingVertical: 10,\r\n    paddingHorizontal: 20,\r\n    borderRadius: 24,\r\n    marginHorizontal: 4,\r\n    marginVertical: 4,\r\n  },\r\n  buttonText: {\r\n    color: \"#fff\",\r\n    fontWeight: \"bold\",\r\n  },\r\n});\r\n"
+        }
+    ]
+}

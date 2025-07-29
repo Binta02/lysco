@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1752751280763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752751784247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n       \"favicon\": \"./assets/images/favicon.png\"\n     },\n     \"plugins\": [\n       \"expo-router\",\n-      \"nativewind\",\n       [\n         \"expo-splash-screen\",\n         {\n           \"image\": \"./assets/images/splash-icon.png\",\n"
+                }
+            ],
+            "date": 1752751280763,
+            "name": "Commit-0",
+            "content": "{\n  \"expo\": {\n    \"name\": \"lysco\",\n    \"slug\": \"lysco\",\n    \"version\": \"1.0.0\",\n    \"orientation\": \"portrait\",\n    \"icon\": \"./assets/images/icon.png\",\n    \"scheme\": \"lysco\",\n    \"userInterfaceStyle\": \"automatic\",\n    \"newArchEnabled\": true,\n    \"ios\": {\n      \"supportsTablet\": true\n    },\n    \"android\": {\n      \"adaptiveIcon\": {\n        \"foregroundImage\": \"./assets/images/adaptive-icon.png\",\n        \"backgroundColor\": \"#ffffff\"\n      },\n      \"edgeToEdgeEnabled\": true\n    },\n    \"web\": {\n      \"bundler\": \"metro\",\n      \"output\": \"static\",\n      \"favicon\": \"./assets/images/favicon.png\"\n    },\n    \"plugins\": [\n      \"expo-router\",\n      \"nativewind\",\n      [\n        \"expo-splash-screen\",\n        {\n          \"image\": \"./assets/images/splash-icon.png\",\n          \"imageWidth\": 200,\n          \"resizeMode\": \"contain\",\n          \"backgroundColor\": \"#ffffff\"\n        }\n      ]\n    ],\n    \"experiments\": {\n      \"typedRoutes\": true\n    }\n  }\n}\n"
+        }
+    ]
+}

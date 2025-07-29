@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/ui/card.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752759213977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752759213977,
+            "name": "Commit-0",
+            "content": "import React, { ReactNode } from \"react\";\r\nimport { StyleSheet, Text, TextStyle, View, ViewStyle } from \"react-native\";\r\n\r\ntype ViewProps = {\r\n  children: ReactNode;\r\n  style?: ViewStyle | ViewStyle[];\r\n};\r\n\r\ntype TextProps = {\r\n  children: ReactNode;\r\n  style?: TextStyle | TextStyle[];\r\n};\r\n\r\nexport const Card = ({ children, style }: ViewProps) => (\r\n  <View style={[styles.card, style]}>{children}</View>\r\n);\r\n\r\nexport const CardHeader = ({ children, style }: ViewProps) => (\r\n  <View style={[styles.cardHeader, style]}>{children}</View>\r\n);\r\n\r\nexport const CardContent = ({ children, style }: ViewProps) => (\r\n  <View style={[styles.cardContent, style]}>{children}</View>\r\n);\r\n\r\nexport const CardFooter = ({ children, style }: ViewProps) => (\r\n  <View style={[styles.cardFooter, style]}>{children}</View>\r\n);\r\n\r\nexport const CardTitle = ({ children, style }: TextProps) => (\r\n  <Text style={[styles.cardTitle, style]}>{children}</Text>\r\n);\r\n\r\nexport const CardDescription = ({ children, style }: TextProps) => (\r\n  <Text style={[styles.cardDescription, style]}>{children}</Text>\r\n);\r\n\r\nconst styles = StyleSheet.create({\r\n  card: {\r\n    borderRadius: 12,\r\n    borderWidth: 1,\r\n    borderColor: \"#e5e7eb\", // gray-200\r\n    backgroundColor: \"#ffffff\",\r\n    shadowColor: \"#000\",\r\n    shadowOffset: { width: 0, height: 2 },\r\n    shadowOpacity: 0.1,\r\n    shadowRadius: 4,\r\n    elevation: 3, // Android shadow\r\n    marginBottom: 16,\r\n  },\r\n  cardHeader: {\r\n    flexDirection: \"column\",\r\n    padding: 16,\r\n  },\r\n  cardTitle: {\r\n    fontSize: 20,\r\n    fontWeight: \"600\",\r\n  },\r\n  cardDescription: {\r\n    fontSize: 14,\r\n    color: \"#6b7280\", // gray-500\r\n    marginTop: 4,\r\n  },\r\n  cardContent: {\r\n    padding: 16,\r\n    paddingTop: 0,\r\n  },\r\n  cardFooter: {\r\n    flexDirection: \"row\",\r\n    alignItems: \"center\",\r\n    padding: 16,\r\n    paddingTop: 0,\r\n  },\r\n});\r\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/+not-found.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752699792393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752699792393,
+            "name": "Commit-0",
+            "content": "import { Link, Stack } from \"expo-router\";\nimport { StyleSheet } from \"react-native\";\n\nimport { ThemedText } from \"@/src/components/ThemedText\";\nimport { ThemedView } from \"@/src/components/ThemedView\";\n\nexport default function NotFoundScreen() {\n  return (\n    <>\n      <Stack.Screen options={{ title: \"Oops!\" }} />\n      <ThemedView style={styles.container}>\n        <ThemedText type=\"title\">This screen does not exist.</ThemedText>\n        <Link href=\"/\" style={styles.link}>\n          <ThemedText type=\"link\">Go to home screen!</ThemedText>\n        </Link>\n      </ThemedView>\n    </>\n  );\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    alignItems: \"center\",\n    justifyContent: \"center\",\n    padding: 20,\n  },\n  link: {\n    marginTop: 15,\n    paddingVertical: 15,\n  },\n});\n"
+        }
+    ]
+}

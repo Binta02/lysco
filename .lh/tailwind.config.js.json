@@ -1,0 +1,18 @@
+{
+    "sourceFile": "tailwind.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752751090189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752751090189,
+            "name": "Commit-0",
+            "content": "/** @type {import('tailwindcss').Config} */\r\nmodule.exports = {\r\n  content: [\"./App.{js,jsx,ts,tsx}\", \"./src/**/*.{js,jsx,ts,tsx}\"],\r\n  theme: {\r\n    extend: {\r\n      colors: {\r\n        \"lysco-turquoise\": \"#06b6d4\",\r\n        \"lysco-pink\": \"#ec4899\",\r\n      },\r\n    },\r\n  },\r\n  plugins: [],\r\n};\r\n"
+        }
+    ]
+}

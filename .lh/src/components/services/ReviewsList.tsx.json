@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/services/ReviewsList.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752831872117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752831872117,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport {\r\n  FlatList,\r\n  StyleSheet,\r\n  Text,\r\n  TouchableOpacity,\r\n  View,\r\n} from \"react-native\";\r\n\r\nexport interface ReviewsListProps {\r\n  reviews: any[];\r\n  isLoading: boolean;\r\n  currentUserId?: string | null;\r\n  onDeleteReview?: (reviewId: string) => Promise<void>;\r\n}\r\n\r\nconst ReviewsList = ({\r\n  reviews,\r\n  isLoading,\r\n  currentUserId,\r\n  onDeleteReview,\r\n}: ReviewsListProps) => {\r\n  if (isLoading) {\r\n    return <Text>Chargement des avis...</Text>;\r\n  }\r\n\r\n  if (reviews.length === 0) {\r\n    return <Text style={styles.noReviews}>Aucun avis pour le moment.</Text>;\r\n  }\r\n\r\n  return (\r\n    <FlatList\r\n      data={reviews}\r\n      keyExtractor={(item, index) => `${item.id}-${index}`}\r\n      renderItem={({ item: review }) => (\r\n        <View style={styles.reviewItem}>\r\n          <Text style={styles.userName}>{review.user_name}</Text>\r\n          <View style={styles.ratingRow}>\r\n            <View style={styles.stars}>\r\n              {Array.from({ length: 5 }).map((_, i) => (\r\n                <Text\r\n                  key={i}\r\n                  style={\r\n                    i < review.rating ? styles.starActive : styles.starInactive\r\n                  }\r\n                >\r\n                  ★\r\n                </Text>\r\n              ))}\r\n            </View>\r\n            <Text style={styles.date}>\r\n              {new Date(review.created_at).toLocaleDateString(\"fr-FR\")}\r\n            </Text>\r\n          </View>\r\n          <Text style={styles.comment}>{review.comment}</Text>\r\n\r\n          {currentUserId &&\r\n            review.user_id === currentUserId &&\r\n            onDeleteReview && (\r\n              <TouchableOpacity onPress={() => onDeleteReview(review.id)}>\r\n                <Text style={styles.deleteButton}>Supprimer</Text>\r\n              </TouchableOpacity>\r\n            )}\r\n        </View>\r\n      )}\r\n    />\r\n  );\r\n};\r\n\r\nconst styles = StyleSheet.create({\r\n  noReviews: {\r\n    color: \"#6b7280\", // gray-500\r\n    fontStyle: \"italic\",\r\n  },\r\n  reviewItem: {\r\n    borderBottomWidth: 1,\r\n    borderBottomColor: \"#e5e7eb\", // gray-200\r\n    paddingVertical: 12,\r\n  },\r\n  userName: {\r\n    fontWeight: \"600\",\r\n    color: \"#1f2937\", // gray-800\r\n  },\r\n  ratingRow: {\r\n    flexDirection: \"row\",\r\n    alignItems: \"center\",\r\n    marginTop: 4,\r\n  },\r\n  stars: {\r\n    flexDirection: \"row\",\r\n  },\r\n  starActive: {\r\n    color: \"#facc15\", // yellow-400\r\n    marginRight: 2,\r\n    fontSize: 18,\r\n  },\r\n  starInactive: {\r\n    color: \"#d1d5db\", // gray-300\r\n    marginRight: 2,\r\n    fontSize: 18,\r\n  },\r\n  date: {\r\n    fontSize: 12,\r\n    color: \"#6b7280\", // gray-600\r\n    marginLeft: 8,\r\n  },\r\n  comment: {\r\n    marginTop: 8,\r\n  },\r\n  deleteButton: {\r\n    marginTop: 8,\r\n    fontSize: 12,\r\n    color: \"#ef4444\", // red-500\r\n  },\r\n});\r\n\r\nexport default ReviewsList;\r\n"
+        }
+    ]
+}

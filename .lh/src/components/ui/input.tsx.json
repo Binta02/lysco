@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/ui/input.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1752759357503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752759384471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,28 @@\n-import * as React from \"react\";\r\n+import React from \"react\";\r\n+import { StyleSheet, TextInput, TextInputProps } from \"react-native\";\r\n \r\n-import { cn } from \"@/lib/utils\";\r\n+type InputProps = TextInputProps & {\r\n+  // tu peux ajouter ici d'autres props spécifiques si besoin\r\n+};\r\n \r\n-const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<\"input\">>(\r\n-  ({ className, type, ...props }, ref) => {\r\n-    return (\r\n-      <input\r\n-        type={type}\r\n-        className={cn(\r\n-          \"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm\",\r\n-          className\r\n-        )}\r\n-        ref={ref}\r\n-        {...props}\r\n-      />\r\n-    );\r\n+export const Input = React.forwardRef<TextInput, InputProps>(\r\n+  ({ style, ...props }, ref) => {\r\n+    return <TextInput ref={ref} style={[styles.input, style]} {...props} />;\r\n   }\r\n );\r\n+\r\n Input.displayName = \"Input\";\r\n \r\n-export { Input };\r\n+const styles = StyleSheet.create({\r\n+  input: {\r\n+    height: 40, // comme h-10\r\n+    width: \"100%\",\r\n+    borderRadius: 8, // rounded-md\r\n+    borderWidth: 1,\r\n+    borderColor: \"#d1d5db\", // border-input, gris clair\r\n+    backgroundColor: \"#fff\", // bg-background\r\n+    paddingHorizontal: 12, // px-3\r\n+    paddingVertical: 8, // py-2\r\n+    fontSize: 16, // text-base\r\n+  },\r\n+});\r\n"
+                }
+            ],
+            "date": 1752759357503,
+            "name": "Commit-0",
+            "content": "import * as React from \"react\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst Input = React.forwardRef<HTMLInputElement, React.ComponentProps<\"input\">>(\r\n  ({ className, type, ...props }, ref) => {\r\n    return (\r\n      <input\r\n        type={type}\r\n        className={cn(\r\n          \"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm\",\r\n          className\r\n        )}\r\n        ref={ref}\r\n        {...props}\r\n      />\r\n    );\r\n  }\r\n);\r\nInput.displayName = \"Input\";\r\n\r\nexport { Input };\r\n"
+        }
+    ]
+}

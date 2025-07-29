@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/cart/FloatingCartButton.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1753097973135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1753097973135,
+            "name": "Commit-0",
+            "content": "import React, { useState } from \"react\";\r\nimport {\r\n  Modal,\r\n  StyleSheet,\r\n  Text,\r\n  TouchableOpacity,\r\n  View,\r\n} from \"react-native\";\r\nimport { Feather } from \"@expo/vector-icons\";\r\nimport { useCart } from \"@/src/components/cart/CartContext\";\r\nimport { CartDrawer } from \"@/src/components/cart/CartDrawer\";\r\n\r\nexport function FloatingCartButton() {\r\n  const { items } = useCart();\r\n  const [open, setOpen] = useState(false);\r\n\r\n  return (\r\n    <View style={styles.container}>\r\n      {/* Floating Button */}\r\n      <TouchableOpacity\r\n        style={styles.fab}\r\n        onPress={() => setOpen(true)}\r\n        activeOpacity={0.7}\r\n      >\r\n        <Feather name=\"shopping-cart\" size={28} color=\"#000\" />\r\n        {items.length > 0 && (\r\n          <View style={styles.badge}>\r\n            <Text style={styles.badgeText}>{items.length}</Text>\r\n          </View>\r\n        )}\r\n      </TouchableOpacity>\r\n\r\n      {/* Modal Drawer */}\r\n      <Modal\r\n        animationType=\"slide\"\r\n        transparent={false}\r\n        visible={open}\r\n        onRequestClose={() => setOpen(false)}\r\n      >\r\n        <View style={styles.modalContent}>\r\n          <View style={styles.header}>\r\n            <Text style={styles.title}>Votre panier</Text>\r\n            <TouchableOpacity onPress={() => setOpen(false)}>\r\n              <Feather name=\"x\" size={24} />\r\n            </TouchableOpacity>\r\n          </View>\r\n          <CartDrawer onCheckout={() => setOpen(false)} />\r\n        </View>\r\n      </Modal>\r\n    </View>\r\n  );\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n  container: {\r\n    position: \"absolute\",\r\n    bottom: 24,\r\n    right: 24,\r\n    zIndex: 50,\r\n  },\r\n  fab: {\r\n    backgroundColor: \"#fff\",\r\n    borderWidth: 1,\r\n    borderColor: \"#d1d5db\",\r\n    width: 56,\r\n    height: 56,\r\n    borderRadius: 28,\r\n    justifyContent: \"center\",\r\n    alignItems: \"center\",\r\n    shadowColor: \"#000\",\r\n    shadowOffset: { width: 0, height: 2 },\r\n    shadowOpacity: 0.2,\r\n    shadowRadius: 4,\r\n    elevation: 5,\r\n  },\r\n  badge: {\r\n    position: \"absolute\",\r\n    top: -4,\r\n    right: -4,\r\n    backgroundColor: \"#dc2626\",\r\n    width: 20,\r\n    height: 20,\r\n    borderRadius: 10,\r\n    justifyContent: \"center\",\r\n    alignItems: \"center\",\r\n  },\r\n  badgeText: {\r\n    color: \"#fff\",\r\n    fontSize: 12,\r\n    fontWeight: \"bold\",\r\n  },\r\n  modalContent: {\r\n    flex: 1,\r\n    backgroundColor: \"#fff\",\r\n    padding: 16,\r\n    paddingTop: 48,\r\n  },\r\n  header: {\r\n    flexDirection: \"row\",\r\n    justifyContent: \"space-between\",\r\n    alignItems: \"center\",\r\n    marginBottom: 16,\r\n  },\r\n  title: {\r\n    fontSize: 20,\r\n    fontWeight: \"600\",\r\n  },\r\n});\r\n"
+        }
+    ]
+}

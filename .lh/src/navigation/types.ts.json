@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/navigation/types.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1752736926471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752739054286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n   Domiciliation: undefined;\r\n   Dashboard: undefined;\r\n   Register: undefined;\r\n   Contact: undefined;\r\n+  Login: undefined;\r\n };\r\n"
+                },
+                {
+                    "date": 1752739294338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n   Domiciliation: undefined;\r\n   Dashboard: undefined;\r\n   Register: undefined;\r\n   Contact: undefined;\r\n-  Login: undefined;\r\n+  Login: { redirect?: string };\r\n };\r\n"
+                },
+                {
+                    "date": 1752754486862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,6 @@\n   Dashboard: undefined;\r\n   Register: undefined;\r\n   Contact: undefined;\r\n   Login: { redirect?: string };\r\n+  Footer: undefined;\r\n };\r\n"
+                }
+            ],
+            "date": 1752736926469,
+            "name": "Commit-0",
+            "content": "export type RootStackParamList = {\r\n  Home: undefined;\r\n  Domiciliation: undefined;\r\n  Dashboard: undefined;\r\n  Register: undefined;\r\n  Contact: undefined;\r\n};\r\n"
+        }
+    ]
+}

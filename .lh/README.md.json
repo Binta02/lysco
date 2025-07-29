@@ -1,0 +1,18 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1753096914340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1753096914340,
+            "name": "Commit-0",
+            "content": "\n# 📱 Lys&Co App\n\nApplication mobile React Native (Expo) connectée à Supabase.\n\nElle permet aux utilisateurs :\n✅ de se connecter / s’inscrire,  \n✅ de gérer leur profil,  \n✅ de consulter leurs documents, réservations, abonnements, factures,  \n✅ de supprimer leur compte,  \n✅ et aux admins de consulter certaines données.\n\n---\n\n## 🚀 Stack technique\n\n- **Frontend** : React Native (Expo)  \n- **Backend** : Supabase (PostgreSQL, Auth, RLS, Storage)  \n- **Paiement** : Stripe (via backend Node.js)  \n- **Sécurité** : RLS activé, policies spécifiques\n\n---\n\n## ⚙️ Configuration\n\n1️⃣ Variables d’environnement (`.env` ou Expo config)\n\n```\nEXPO_PUBLIC_APP_URL=https://ton-app-frontend.com\nSUPABASE_URL=https://xxxx.supabase.co\nSUPABASE_PUBLIC_ANON_KEY=...\nBACKEND_NODE_URL=https://ton-backend-node.vercel.app\n```\n\n2️⃣ Supabase (table `profiles`) policies à activer :\n\n- ✅ SELECT : Users can view own profile → `auth.uid() = id`\n- ✅ INSERT : Users can insert own profile → `auth.uid() = id` *(ou plus simple : `true` mais ⚠ sécurité en prod)*\n- ✅ UPDATE : Users can update own profile → `auth.uid() = id`\n\n---\n\n## 🔑 Fonctionnalités principales\n\n- **Authentification** : email + mot de passe (via Supabase)\n- **Dashboard utilisateur** :\n  - Affiche nom, email, téléphone, entreprise\n  - Modification du profil\n  - Suppression définitive du compte\n- **Documents utilisateurs**\n- **Réservations de salles**\n- **Abonnements Stripe**\n- **Factures Stripe**\n- **Portail Stripe pour gestion des abonnements**\n\n---\n\n## 📂 Arborescence clé\n\n```\n/src\n  /components\n    /dashboard → composants du tableau de bord\n    /ui → composants UI réutilisables\n  /hooks\n    useUserData.tsx → gestion des données utilisateur\n  /integrations\n    supabase → client Supabase\n  /navigation\n    types.ts → types navigation React Navigation\n```\n\n---\n\n## ⚠️ Notes importantes\n\n- Les policies `WITH CHECK (true)` permettent à tous les `authenticated` d’insérer → idéal en dev, mais en prod sécuriser avec :\n  \n  ```sql\n  WITH CHECK (auth.uid() = id)\n  ```\n\n- Tester `select auth.uid();` sur Supabase SQL Editor pour s’assurer que le token est bien passé.\n\n- Si `auth.uid()` retourne `null` → vérifier :\n  - token côté client,\n  - headers envoyés,\n  - configuration du Supabase client (ex. `persistSession` et `storage` pour React Native).\n\n---\n\n## 💬 Commandes utiles\n\n```bash\n# Lancer Expo\nnpx expo start\n\n# Générer une build Android\neas build --platform android\n\n# Générer une build iOS\neas build --platform ios\n\n# Lancer le backend Node local\nnpm run dev\n```\n"
+        }
+    ]
+}

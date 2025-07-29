@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/ParallaxScrollView.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1752699792786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752738034344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n   useAnimatedStyle,\n   useScrollViewOffset,\n } from \"react-native-reanimated\";\n \n-import { useColorScheme } from \"@/hooks/useColorScheme\";\n import { ThemedView } from \"@/src/components/ThemedView\";\n-import { useBottomTabOverflow } from \"@/src/components/ui/TabBarBackground\";\n+import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n+import { useBottomTabOverflow } from \"@/src/hooks/useColorScheme/ui/TabBarBackground\";\n \n const HEADER_HEIGHT = 250;\n \n type Props = PropsWithChildren<{\n"
+                },
+                {
+                    "date": 1752738067222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n } from \"react-native-reanimated\";\n \n import { ThemedView } from \"@/src/components/ThemedView\";\n import { useColorScheme } from \"@/src/hooks/useColorScheme\";\n-import { useBottomTabOverflow } from \"@/src/hooks/useColorScheme/ui/TabBarBackground\";\n+import { useBottomTabOverflow } from \"./ui/TabBarBackground\";\n \n const HEADER_HEIGHT = 250;\n \n type Props = PropsWithChildren<{\n"
+                }
+            ],
+            "date": 1752699792786,
+            "name": "Commit-0",
+            "content": "import type { PropsWithChildren, ReactElement } from \"react\";\nimport { StyleSheet } from \"react-native\";\nimport Animated, {\n  interpolate,\n  useAnimatedRef,\n  useAnimatedStyle,\n  useScrollViewOffset,\n} from \"react-native-reanimated\";\n\nimport { useColorScheme } from \"@/hooks/useColorScheme\";\nimport { ThemedView } from \"@/src/components/ThemedView\";\nimport { useBottomTabOverflow } from \"@/src/components/ui/TabBarBackground\";\n\nconst HEADER_HEIGHT = 250;\n\ntype Props = PropsWithChildren<{\n  headerImage: ReactElement;\n  headerBackgroundColor: { dark: string; light: string };\n}>;\n\nexport default function ParallaxScrollView({\n  children,\n  headerImage,\n  headerBackgroundColor,\n}: Props) {\n  const colorScheme = useColorScheme() ?? \"light\";\n  const scrollRef = useAnimatedRef<Animated.ScrollView>();\n  const scrollOffset = useScrollViewOffset(scrollRef);\n  const bottom = useBottomTabOverflow();\n  const headerAnimatedStyle = useAnimatedStyle(() => {\n    return {\n      transform: [\n        {\n          translateY: interpolate(\n            scrollOffset.value,\n            [-HEADER_HEIGHT, 0, HEADER_HEIGHT],\n            [-HEADER_HEIGHT / 2, 0, HEADER_HEIGHT * 0.75]\n          ),\n        },\n        {\n          scale: interpolate(\n            scrollOffset.value,\n            [-HEADER_HEIGHT, 0, HEADER_HEIGHT],\n            [2, 1, 1]\n          ),\n        },\n      ],\n    };\n  });\n\n  return (\n    <ThemedView style={styles.container}>\n      <Animated.ScrollView\n        ref={scrollRef}\n        scrollEventThrottle={16}\n        scrollIndicatorInsets={{ bottom }}\n        contentContainerStyle={{ paddingBottom: bottom }}\n      >\n        <Animated.View\n          style={[\n            styles.header,\n            { backgroundColor: headerBackgroundColor[colorScheme] },\n            headerAnimatedStyle,\n          ]}\n        >\n          {headerImage}\n        </Animated.View>\n        <ThemedView style={styles.content}>{children}</ThemedView>\n      </Animated.ScrollView>\n    </ThemedView>\n  );\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n  },\n  header: {\n    height: HEADER_HEIGHT,\n    overflow: \"hidden\",\n  },\n  content: {\n    flex: 1,\n    padding: 32,\n    gap: 16,\n    overflow: \"hidden\",\n  },\n});\n"
+        }
+    ]
+}

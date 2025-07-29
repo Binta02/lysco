@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/services/PriceCard.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752831844618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752831844618,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport { StyleSheet, Text, View } from \"react-native\";\r\n\r\ninterface PriceCardProps {\r\n  service: string;\r\n  price: string;\r\n  note?: string;\r\n}\r\n\r\nconst PriceCard = ({ service, price, note }: PriceCardProps) => {\r\n  return (\r\n    <View style={styles.card}>\r\n      <Text style={styles.title}>{service}</Text>\r\n      <Text style={styles.price}>{price}</Text>\r\n      {note && <Text style={styles.note}>{note}</Text>}\r\n    </View>\r\n  );\r\n};\r\n\r\nconst styles = StyleSheet.create({\r\n  card: {\r\n    flex: 1,\r\n    borderRadius: 12,\r\n    borderWidth: 1,\r\n    borderColor: \"#e5e7eb\", // gray-200\r\n    padding: 16,\r\n    backgroundColor: \"#fff\",\r\n  },\r\n  title: {\r\n    fontSize: 18,\r\n    fontWeight: \"500\",\r\n    color: \"#111827\", // gray-900\r\n    marginBottom: 8,\r\n  },\r\n  price: {\r\n    fontSize: 24,\r\n    fontWeight: \"bold\",\r\n    color: \"#06b6d4\", // lysco turquoise\r\n  },\r\n  note: {\r\n    fontSize: 14,\r\n    color: \"#6b7280\", // gray-500\r\n    marginTop: 8,\r\n  },\r\n});\r\n\r\nexport default PriceCard;\r\n"
+        }
+    ]
+}

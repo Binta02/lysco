@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/dashboard/ProfileEditForm.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1754404079521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1754404079521,
+            "name": "Commit-0",
+            "content": "import React, { useState } from \"react\";\r\nimport { Button, StyleSheet, Text, TextInput, View } from \"react-native\";\r\n\r\ninterface ProfileEditFormProps {\r\n  profile: {\r\n    first_name: string;\r\n    last_name: string;\r\n    company_name: string;\r\n    phone: string;\r\n  } | null;\r\n  onUpdate: (updatedProfile: Partial<any>) => Promise<boolean>;\r\n  onCancel: () => void;\r\n}\r\n\r\nconst ProfileEditForm = ({\r\n  profile,\r\n  onUpdate,\r\n  onCancel,\r\n}: ProfileEditFormProps) => {\r\n  const [formData, setFormData] = useState({\r\n    first_name: profile?.first_name || \"\",\r\n    last_name: profile?.last_name || \"\",\r\n    company_name: profile?.company_name || \"\",\r\n    phone: profile?.phone || \"\",\r\n  });\r\n\r\n  const [isSubmitting, setIsSubmitting] = useState(false);\r\n\r\n  const handleChange = (name: string, value: string) => {\r\n    setFormData((prev) => ({\r\n      ...prev,\r\n      [name]: value,\r\n    }));\r\n  };\r\n\r\n  const handleSubmit = async () => {\r\n    setIsSubmitting(true);\r\n    try {\r\n      const success = await onUpdate(formData);\r\n      if (success) {\r\n        onCancel();\r\n      }\r\n    } finally {\r\n      setIsSubmitting(false);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <View style={styles.card}>\r\n      <Text style={styles.title}>Modifier votre profil</Text>\r\n\r\n      <Text style={styles.label}>Prénom</Text>\r\n      <TextInput\r\n        style={styles.input}\r\n        value={formData.first_name}\r\n        onChangeText={(text) => handleChange(\"first_name\", text)}\r\n      />\r\n\r\n      <Text style={styles.label}>Nom</Text>\r\n      <TextInput\r\n        style={styles.input}\r\n        value={formData.last_name}\r\n        onChangeText={(text) => handleChange(\"last_name\", text)}\r\n      />\r\n\r\n      <Text style={styles.label}>Nom de l'entreprise</Text>\r\n      <TextInput\r\n        style={styles.input}\r\n        value={formData.company_name}\r\n        onChangeText={(text) => handleChange(\"company_name\", text)}\r\n      />\r\n\r\n      <Text style={styles.label}>Téléphone</Text>\r\n      <TextInput\r\n        style={styles.input}\r\n        value={formData.phone}\r\n        onChangeText={(text) => handleChange(\"phone\", text)}\r\n      />\r\n\r\n      <View style={styles.buttonContainer}>\r\n        <Button title=\"Annuler\" onPress={onCancel} disabled={isSubmitting} />\r\n        <Button\r\n          title={isSubmitting ? \"Enregistrement...\" : \"Enregistrer\"}\r\n          onPress={handleSubmit}\r\n          disabled={isSubmitting}\r\n        />\r\n      </View>\r\n    </View>\r\n  );\r\n};\r\n\r\nconst styles = StyleSheet.create({\r\n  card: { padding: 16, backgroundColor: \"#fff\", borderRadius: 8 },\r\n  title: { fontSize: 20, fontWeight: \"bold\", marginBottom: 16 },\r\n  label: { marginTop: 12, marginBottom: 4 },\r\n  input: {\r\n    borderWidth: 1,\r\n    borderColor: \"#ddd\",\r\n    borderRadius: 6,\r\n    paddingHorizontal: 10,\r\n    paddingVertical: 8,\r\n  },\r\n  buttonContainer: {\r\n    flexDirection: \"row\",\r\n    justifyContent: \"space-between\",\r\n    marginTop: 20,\r\n  },\r\n});\r\n\r\nexport default ProfileEditForm;\r\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/(app)/reactiver-mon-compte.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1754844365281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1754844365281,
+            "name": "Commit-0",
+            "content": "import { useLocalSearchParams } from \"expo-router\";\r\nimport React, { useEffect, useState } from \"react\";\r\nimport { ActivityIndicator, StyleSheet, Text, View } from \"react-native\";\r\n\r\nexport default function ReactiverMonCompte() {\r\n  const { user } = useLocalSearchParams();\r\n  const [loading, setLoading] = useState(true);\r\n  const [message, setMessage] = useState(\"\");\r\n\r\n  useEffect(() => {\r\n    if (!user) return;\r\n\r\n    const reactivate = async () => {\r\n      try {\r\n        const res = await fetch(\r\n          `https://mon-backend-node-henna.vercel.app/api/reactivate-account?user=${user}`\r\n        );\r\n        const data = await res.json();\r\n\r\n        if (!res.ok) throw new Error(data.error || \"Erreur inconnue\");\r\n\r\n        setMessage(\"🎉 Votre compte a été réactivé avec succès.\");\r\n      } catch (err: any) {\r\n        setMessage(`❌ Échec : ${err.message}`);\r\n      } finally {\r\n        setLoading(false);\r\n      }\r\n    };\r\n\r\n    reactivate();\r\n  }, [user]);\r\n\r\n  return (\r\n    <View style={styles.container}>\r\n      <View style={styles.card}>\r\n        <Text style={styles.title}>Réactivation de compte</Text>\r\n        {loading ? (\r\n          <View style={styles.loadingContainer}>\r\n            <ActivityIndicator size=\"large\" color=\"#5cb9bc\" />\r\n            <Text style={styles.loadingText}>Traitement en cours...</Text>\r\n          </View>\r\n        ) : (\r\n          <Text style={styles.message}>{message}</Text>\r\n        )}\r\n      </View>\r\n    </View>\r\n  );\r\n}\r\n\r\nconst styles = StyleSheet.create({\r\n  container: {\r\n    flex: 1,\r\n    backgroundColor: \"#f3f4f6\",\r\n    justifyContent: \"center\",\r\n    alignItems: \"center\",\r\n    padding: 16,\r\n  },\r\n  card: {\r\n    backgroundColor: \"#fff\",\r\n    width: \"100%\",\r\n    maxWidth: 400,\r\n    borderRadius: 12,\r\n    padding: 24,\r\n    alignItems: \"center\",\r\n    shadowColor: \"#000\",\r\n    shadowOpacity: 0.1,\r\n    shadowOffset: { width: 0, height: 2 },\r\n    elevation: 4,\r\n  },\r\n  title: {\r\n    fontSize: 22,\r\n    fontWeight: \"bold\",\r\n    color: \"#16a34a\",\r\n    marginBottom: 16,\r\n    textAlign: \"center\",\r\n  },\r\n  loadingContainer: {\r\n    alignItems: \"center\",\r\n  },\r\n  loadingText: {\r\n    marginTop: 8,\r\n    color: \"#6b7280\",\r\n  },\r\n  message: {\r\n    fontSize: 16,\r\n    color: \"#374151\",\r\n    textAlign: \"center\",\r\n  },\r\n});\r\n"
+        }
+    ]
+}

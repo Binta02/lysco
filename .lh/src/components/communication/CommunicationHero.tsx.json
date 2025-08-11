@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1752951149287,
@@ -16,6 +16,10 @@
                 {
                     "date": 1753020314377,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,11 @@\n           </TouchableOpacity>\r\n \r\n           <TouchableOpacity\r\n             style={[styles.buttonOutline, { borderColor: \"#5cb9bc\" }]}\r\n-            onPress={() => router.push(\"/(tabs)/communication/CommunicationPacks\")}\r\n+            onPress={() =>\r\n+              router.push(\"/(tabs)/communication/CommunicationPacks\")\r\n+            }\r\n           >\r\n             <Text style={[styles.buttonText, { color: \"#5cb9bc\" }]}>\r\n               Nos packs de communication\r\n             </Text>\r\n"
+                },
+                {
+                    "date": 1754403382447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,17 +25,17 @@\n \r\n         <View style={styles.buttonRow}>\r\n           <TouchableOpacity\r\n             style={[styles.button, { backgroundColor: \"#5cb9bc\" }]}\r\n-            onPress={() => router.push(\"/(tabs)/Contact\")}\r\n+            onPress={() => router.push(\"/(app)/Contact\")}\r\n           >\r\n             <Text style={styles.buttonText}>Prenez RDV !</Text>\r\n           </TouchableOpacity>\r\n \r\n           <TouchableOpacity\r\n             style={[styles.buttonOutline, { borderColor: \"#5cb9bc\" }]}\r\n             onPress={() =>\r\n-              router.push(\"/(tabs)/communication/CommunicationPacks\")\r\n+              router.push(\"/(app)/communication/CommunicationPacks\")\r\n             }\r\n           >\r\n             <Text style={[styles.buttonText, { color: \"#5cb9bc\" }]}>\r\n               Nos packs de communication\r\n"
                 }
             ],
             "date": 1752951149287,

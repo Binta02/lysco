@@ -1,0 +1,22 @@
+{
+    "sourceFile": "listRoutes.mjs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1754301007968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754301574878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import fs from \"fs\";\r\n import path from \"path\";\r\n \r\n-const ROUTES_DIR = \"./app/(app)\";\r\n+const ROUTES_DIR = \"./app\";\r\n \r\n function walk(dir, parent = \"\") {\r\n   const entries = fs.readdirSync(dir, { withFileTypes: true });\r\n   const routes = [];\r\n"
+                }
+            ],
+            "date": 1754301007968,
+            "name": "Commit-0",
+            "content": "import fs from \"fs\";\r\nimport path from \"path\";\r\n\r\nconst ROUTES_DIR = \"./app/(app)\";\r\n\r\nfunction walk(dir, parent = \"\") {\r\n  const entries = fs.readdirSync(dir, { withFileTypes: true });\r\n  const routes = [];\r\n\r\n  for (const entry of entries) {\r\n    const fullPath = path.join(dir, entry.name);\r\n    const route = path.join(parent, entry.name);\r\n\r\n    if (entry.isDirectory()) {\r\n      routes.push(...walk(fullPath, route));\r\n    } else if (entry.isFile() && entry.name.endsWith(\".tsx\")) {\r\n      const name = route.replace(/\\.tsx$/, \"\");\r\n      routes.push(\"/\" + name.replace(/index$/, \"\").replace(/\\\\/g, \"/\"));\r\n    }\r\n  }\r\n\r\n  return routes;\r\n}\r\n\r\nconst routes = walk(ROUTES_DIR);\r\nconsole.log(\"\\n🧭 Routes détectées :\\n\");\r\nroutes.forEach((route) => console.log(`- ${route}`));\r\n"
+        }
+    ]
+}

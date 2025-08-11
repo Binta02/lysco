@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1752951033659,
@@ -16,6 +16,10 @@
                 {
                     "date": 1753121681321,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,10 @@\n     <ScrollView\r\n       style={styles.container}\r\n       contentContainerStyle={{ flexGrow: 1, justifyContent: \"space-between\" }}\r\n     >\r\n+            <View style={{ padding: 16 }}>\r\n+      \r\n       {\" \"}\r\n       <Text style={styles.title}>Communication Print</Text>\r\n       <View style={styles.section}>\r\n         <Text style={styles.paragraph}>\r\n@@ -65,8 +67,9 @@\n         onPress={() => router.push(\"/contact\" as any)}\r\n       >\r\n         <Text style={styles.buttonText}>Contactez-nous</Text>\r\n       </TouchableOpacity>\r\n+      </View>\r\n       <Footer />\r\n     </ScrollView>\r\n   );\r\n };\r\n"
+                },
+                {
+                    "date": 1754293120791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         paddingTop: 20,\r\n         paddingBottom: 40,\r\n       }}\r\n     >\r\n-      <View>\r\n+      <View style={{ padding: 16 }}>\r\n         <Text style={styles.title}>Communication Print</Text>\r\n \r\n         <Text style={styles.paragraph}>\r\n           Faites de la communication print une alliée ! Porte-parole de votre\r\n"
                 }
             ],
             "date": 1752951033659,

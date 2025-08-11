@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1752857223412,
@@ -20,6 +20,10 @@
                 {
                     "date": 1753099223208,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useCart } from \"@/src/hooks/useCart\";\r\n+import { useCart } from \"@/src/components/cart/CartContext\";\r\n import { useToast } from \"@/src/hooks/useToast\";\r\n import { supabase } from \"@/src/integrations/supabase/client\";\r\n import { Session } from \"@supabase/supabase-js\";\r\n import { useRouter } from \"expo-router\";\r\n"
+                },
+                {
+                    "date": 1754403500030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n                     : \"domiciliation-mensuel-societe-normal\",\r\n                   title: \"Domiciliation Mensuelle - Société\",\r\n                   price: engagementSociete ? \"18,00\" : \"36,00\",\r\n                 })\r\n-              : router.push(\"/(tabs)/Login\" as any)\r\n+              : router.push(\"/(app)/Login\" as any)\r\n           }\r\n         >\r\n           <Text style={styles.buttonText}>\r\n             {session ? \"Ajouter au panier\" : \"Connectez-vous\"}\r\n@@ -122,9 +122,9 @@\n                     : \"domiciliation-mensuel-auto-entrepreneur-normal\",\r\n                   title: \"Domiciliation Mensuelle - Auto Entrepreneur\",\r\n                   price: engagementAuto ? \"12,00\" : \"24,00\",\r\n                 })\r\n-              : router.push(\"/(tabs)/Login\" as any)\r\n+              : router.push(\"/(app)/Login\" as any)\r\n           }\r\n         >\r\n           <Text style={styles.buttonText}>\r\n             {session ? \"Ajouter au panier\" : \"Connectez-vous\"}\r\n@@ -150,9 +150,9 @@\n                   id: \"domiciliation-mensuel-association\",\r\n                   title: \"Domiciliation Mensuelle - Association\",\r\n                   price: \"15,00\",\r\n                 })\r\n-              : router.push(\"/(tabs)/Login\" as any)\r\n+              : router.push(\"/(app)/Login\" as any)\r\n           }\r\n         >\r\n           <Text style={styles.buttonText}>\r\n             {session ? \"Ajouter au panier\" : \"Connectez-vous\"}\r\n"
                 }
             ],
             "date": 1752857223412,

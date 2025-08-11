@@ -1,0 +1,78 @@
+{
+    "sourceFile": "app/(app)/_layout.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1754301142002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754301173468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // app/(app)/_layout.tsx\r\n import { Stack } from \"expo-router\";\r\n \r\n export default function AppLayout() {\r\n-  return <Stack />;\r\n+  return <Stack screenOptions={{ headerShown: false }} />;\r\n }\r\n"
+                },
+                {
+                    "date": 1754301199178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,49 @@\n-// app/(app)/_layout.tsx\r\n-import { Stack } from \"expo-router\";\r\n+import { Tabs } from \"expo-router\";\r\n+import { Platform } from \"react-native\";\r\n \r\n-export default function AppLayout() {\r\n-  return <Stack screenOptions={{ headerShown: false }} />;\r\n+import { Colors } from \"@/constants/Colors\";\r\n+import { HapticTab } from \"@/src/components/HapticTab\";\r\n+import { IconSymbol } from \"@/src/components/ui/IconSymbol\";\r\n+import TabBarBackground from \"@/src/components/ui/TabBarBackground\";\r\n+import { useColorScheme } from \"@/src/hooks/useColorScheme\";\r\n+\r\n+export default function TabLayout() {\r\n+  const colorScheme = useColorScheme();\r\n+\r\n+  return (\r\n+    <Tabs\r\n+      screenOptions={{\r\n+        tabBarActiveTintColor: Colors[colorScheme ?? \"light\"].tint,\r\n+        headerShown: false,\r\n+        tabBarButton: HapticTab,\r\n+        tabBarBackground: TabBarBackground,\r\n+        tabBarStyle: Platform.select({\r\n+          ios: {\r\n+            // Use a transparent background on iOS to show the blur effect\r\n+            position: \"absolute\",\r\n+          },\r\n+          default: {},\r\n+        }),\r\n+      }}\r\n+    >\r\n+      <Tabs.Screen\r\n+        name=\"index\"\r\n+        options={{\r\n+          title: \"Home\",\r\n+          tabBarIcon: ({ color }) => (\r\n+            <IconSymbol size={28} name=\"house.fill\" color={color} />\r\n+          ),\r\n+        }}\r\n+      />\r\n+      <Tabs.Screen\r\n+        name=\"explore\"\r\n+        options={{\r\n+          title: \"Explore\",\r\n+          tabBarIcon: ({ color }) => (\r\n+            <IconSymbol size={28} name=\"paperplane.fill\" color={color} />\r\n+          ),\r\n+        }}\r\n+      />\r\n+    </Tabs>\r\n+  );\r\n }\r\n"
+                },
+                {
+                    "date": 1754301233988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,49 +1,6 @@\n-import { Tabs } from \"expo-router\";\r\n-import { Platform } from \"react-native\";\r\n+// app/(app)/_layout.tsx\r\n+import { Stack } from \"expo-router\";\r\n \r\n-import { Colors } from \"@/constants/Colors\";\r\n-import { HapticTab } from \"@/src/components/HapticTab\";\r\n-import { IconSymbol } from \"@/src/components/ui/IconSymbol\";\r\n-import TabBarBackground from \"@/src/components/ui/TabBarBackground\";\r\n-import { useColorScheme } from \"@/src/hooks/useColorScheme\";\r\n-\r\n-export default function TabLayout() {\r\n-  const colorScheme = useColorScheme();\r\n-\r\n-  return (\r\n-    <Tabs\r\n-      screenOptions={{\r\n-        tabBarActiveTintColor: Colors[colorScheme ?? \"light\"].tint,\r\n-        headerShown: false,\r\n-        tabBarButton: HapticTab,\r\n-        tabBarBackground: TabBarBackground,\r\n-        tabBarStyle: Platform.select({\r\n-          ios: {\r\n-            // Use a transparent background on iOS to show the blur effect\r\n-            position: \"absolute\",\r\n-          },\r\n-          default: {},\r\n-        }),\r\n-      }}\r\n-    >\r\n-      <Tabs.Screen\r\n-        name=\"index\"\r\n-        options={{\r\n-          title: \"Home\",\r\n-          tabBarIcon: ({ color }) => (\r\n-            <IconSymbol size={28} name=\"house.fill\" color={color} />\r\n-          ),\r\n-        }}\r\n-      />\r\n-      <Tabs.Screen\r\n-        name=\"explore\"\r\n-        options={{\r\n-          title: \"Explore\",\r\n-          tabBarIcon: ({ color }) => (\r\n-            <IconSymbol size={28} name=\"paperplane.fill\" color={color} />\r\n-          ),\r\n-        }}\r\n-      />\r\n-    </Tabs>\r\n-  );\r\n+export default function AppLayout() {\r\n+  return <Stack screenOptions={{ headerShown: false }} />;\r\n }\r\n"
+                },
+                {
+                    "date": 1754301856375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-// app/(app)/_layout.tsx\r\n-import { Stack } from \"expo-router\";\r\n+// // app/(app)/_layout.tsx\r\n+// import { Stack } from \"expo-router\";\r\n \r\n-export default function AppLayout() {\r\n-  return <Stack screenOptions={{ headerShown: false }} />;\r\n-}\r\n+// export default function AppLayout() {\r\n+//   return <Stack screenOptions={{ headerShown: false }} />;\r\n+// }\r\n"
+                },
+                {
+                    "date": 1754301862020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-// // app/(app)/_layout.tsx\r\n-// import { Stack } from \"expo-router\";\r\n+// app/(app)/_layout.tsx\r\n+import { Stack } from \"expo-router\";\r\n \r\n-// export default function AppLayout() {\r\n-//   return <Stack screenOptions={{ headerShown: false }} />;\r\n-// }\r\n+export default function AppLayout() {\r\n+  return <Stack screenOptions={{ headerShown: false }} />;\r\n+}\r\n"
+                },
+                {
+                    "date": 1754302035048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-// app/(app)/_layout.tsx\r\n import { Stack } from \"expo-router\";\r\n \r\n export default function AppLayout() {\r\n-  return <Stack screenOptions={{ headerShown: false }} />;\r\n+  return <Stack />;\r\n }\r\n"
+                },
+                {
+                    "date": 1754401201631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,49 @@\n-import { Stack } from \"expo-router\";\r\n+import { Tabs } from \"expo-router\";\r\n+import { Platform } from \"react-native\";\r\n \r\n-export default function AppLayout() {\r\n-  return <Stack />;\r\n+import { Colors } from \"@/constants/Colors\";\r\n+import { HapticTab } from \"@/src/components/HapticTab\";\r\n+import { IconSymbol } from \"@/src/components/ui/IconSymbol\";\r\n+import TabBarBackground from \"@/src/components/ui/TabBarBackground\";\r\n+import { useColorScheme } from \"@/src/hooks/useColorScheme\";\r\n+\r\n+export default function TabLayout() {\r\n+  const colorScheme = useColorScheme();\r\n+\r\n+  return (\r\n+    <Tabs\r\n+      screenOptions={{\r\n+        tabBarActiveTintColor: Colors[colorScheme ?? \"light\"].tint,\r\n+        headerShown: false,\r\n+        tabBarButton: HapticTab,\r\n+        tabBarBackground: TabBarBackground,\r\n+        tabBarStyle: Platform.select({\r\n+          ios: {\r\n+            // Use a transparent background on iOS to show the blur effect\r\n+            position: \"absolute\",\r\n+          },\r\n+          default: {},\r\n+        }),\r\n+      }}\r\n+    >\r\n+      <Tabs.Screen\r\n+        name=\"index\"\r\n+        options={{\r\n+          title: \"Home\",\r\n+          tabBarIcon: ({ color }) => (\r\n+            <IconSymbol size={28} name=\"house.fill\" color={color} />\r\n+          ),\r\n+        }}\r\n+      />\r\n+      <Tabs.Screen\r\n+        name=\"explore\"\r\n+        options={{\r\n+          title: \"Explore\",\r\n+          tabBarIcon: ({ color }) => (\r\n+            <IconSymbol size={28} name=\"paperplane.fill\" color={color} />\r\n+          ),\r\n+        }}\r\n+      />\r\n+    </Tabs>\r\n+  );\r\n }\r\n"
+                },
+                {
+                    "date": 1754401590185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,49 +1,10 @@\n import { Tabs } from \"expo-router\";\r\n-import { Platform } from \"react-native\";\r\n \r\n-import { Colors } from \"@/constants/Colors\";\r\n-import { HapticTab } from \"@/src/components/HapticTab\";\r\n-import { IconSymbol } from \"@/src/components/ui/IconSymbol\";\r\n-import TabBarBackground from \"@/src/components/ui/TabBarBackground\";\r\n-import { useColorScheme } from \"@/src/hooks/useColorScheme\";\r\n-\r\n export default function TabLayout() {\r\n-  const colorScheme = useColorScheme();\r\n-\r\n   return (\r\n-    <Tabs\r\n-      screenOptions={{\r\n-        tabBarActiveTintColor: Colors[colorScheme ?? \"light\"].tint,\r\n-        headerShown: false,\r\n-        tabBarButton: HapticTab,\r\n-        tabBarBackground: TabBarBackground,\r\n-        tabBarStyle: Platform.select({\r\n-          ios: {\r\n-            // Use a transparent background on iOS to show the blur effect\r\n-            position: \"absolute\",\r\n-          },\r\n-          default: {},\r\n-        }),\r\n-      }}\r\n-    >\r\n-      <Tabs.Screen\r\n-        name=\"index\"\r\n-        options={{\r\n-          title: \"Home\",\r\n-          tabBarIcon: ({ color }) => (\r\n-            <IconSymbol size={28} name=\"house.fill\" color={color} />\r\n-          ),\r\n-        }}\r\n-      />\r\n-      <Tabs.Screen\r\n-        name=\"explore\"\r\n-        options={{\r\n-          title: \"Explore\",\r\n-          tabBarIcon: ({ color }) => (\r\n-            <IconSymbol size={28} name=\"paperplane.fill\" color={color} />\r\n-          ),\r\n-        }}\r\n-      />\r\n+    <Tabs>\r\n+      <Tabs.Screen name=\"index\" />\r\n+      <Tabs.Screen name=\"explore\" />\r\n     </Tabs>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754401737624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n   return (\r\n     <Tabs>\r\n       <Tabs.Screen name=\"index\" />\r\n       <Tabs.Screen name=\"explore\" />\r\n+      <Tabs.Screen name=\"Dashboard\" />\r\n     </Tabs>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754401797459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n export default function TabLayout() {\r\n   return (\r\n     <Tabs>\r\n       <Tabs.Screen name=\"index\" />\r\n-      <Tabs.Screen name=\"explore\" />\r\n       <Tabs.Screen name=\"Dashboard\" />\r\n     </Tabs>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754402038918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,14 @@\n import { Tabs } from \"expo-router\";\r\n \r\n export default function TabLayout() {\r\n   return (\r\n-    <Tabs>\r\n+    <Tabs\r\n+      screenOptions={{\r\n+        headerShown: false, // ⛔️ désactive les titres comme “(app)” et “index”\r\n+      }}\r\n+    >\r\n       <Tabs.Screen name=\"index\" />\r\n-      <Tabs.Screen name=\"Dashboard\" />\r\n+      <Tabs.Screen name=\"explore\" />\r\n     </Tabs>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754402177143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,10 @@\n import { Tabs } from \"expo-router\";\r\n \r\n export default function TabLayout() {\r\n   return (\r\n-    <Tabs\r\n-      screenOptions={{\r\n-        headerShown: false, // ⛔️ désactive les titres comme “(app)” et “index”\r\n-      }}\r\n-    >\r\n+    <Tabs>\r\n       <Tabs.Screen name=\"index\" />\r\n-      <Tabs.Screen name=\"explore\" />\r\n+      <Tabs.Screen name=\"Dashboard\" />\r\n     </Tabs>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754402183554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,14 @@\n import { Tabs } from \"expo-router\";\r\n \r\n export default function TabLayout() {\r\n   return (\r\n-    <Tabs>\r\n+    <Tabs\r\n+      screenOptions={{\r\n+        headerShown: false, // ⛔️ désactive les titres comme “(app)” et “index”\r\n+      }}\r\n+    >\r\n       <Tabs.Screen name=\"index\" />\r\n-      <Tabs.Screen name=\"Dashboard\" />\r\n+      <Tabs.Screen name=\"explore\" />\r\n     </Tabs>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754402370273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,11 @@\n-import { Tabs } from \"expo-router\";\r\n+import { Stack } from \"expo-router\";\r\n \r\n-export default function TabLayout() {\r\n+export default function StackLayout() {\r\n   return (\r\n-    <Tabs\r\n+    <Stack\r\n       screenOptions={{\r\n-        headerShown: false, // ⛔️ désactive les titres comme “(app)” et “index”\r\n+        headerShown: false, // pour éviter que “index” ou autre s'affiche en haut\r\n       }}\r\n-    >\r\n-      <Tabs.Screen name=\"index\" />\r\n-      <Tabs.Screen name=\"explore\" />\r\n-    </Tabs>\r\n+    />\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1754403088149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+// app/(app)/_layout\r\n import { Stack } from \"expo-router\";\r\n \r\n export default function StackLayout() {\r\n   return (\r\n"
+                }
+            ],
+            "date": 1754301142002,
+            "name": "Commit-0",
+            "content": "// app/(app)/_layout.tsx\r\nimport { Stack } from \"expo-router\";\r\n\r\nexport default function AppLayout() {\r\n  return <Stack />;\r\n}\r\n"
+        }
+    ]
+}

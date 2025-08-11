@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1752751280763,
@@ -12,6 +12,26 @@
                 {
                     "date": 1752751784247,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n       \"favicon\": \"./assets/images/favicon.png\"\n     },\n     \"plugins\": [\n       \"expo-router\",\n-      \"nativewind\",\n       [\n         \"expo-splash-screen\",\n         {\n           \"image\": \"./assets/images/splash-icon.png\",\n"
+                },
+                {
+                    "date": 1754241325563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,21 +3,26 @@\n     \"name\": \"lysco\",\n     \"slug\": \"lysco\",\n     \"version\": \"1.0.0\",\n     \"orientation\": \"portrait\",\n-    \"icon\": \"./assets/images/icon.png\",\n+    \"icon\": \"./assets/images/logo-lys&co.jpg\",\n     \"scheme\": \"lysco\",\n     \"userInterfaceStyle\": \"automatic\",\n     \"newArchEnabled\": true,\n     \"ios\": {\n-      \"supportsTablet\": true\n+      \"supportsTablet\": true,\n+      \"bundleIdentifier\": \"com.lysandco\",\n+      \"infoPlist\": {\n+        \"ITSAppUsesNonExemptEncryption\": false\n+      }\n     },\n     \"android\": {\n       \"adaptiveIcon\": {\n         \"foregroundImage\": \"./assets/images/adaptive-icon.png\",\n         \"backgroundColor\": \"#ffffff\"\n       },\n-      \"edgeToEdgeEnabled\": true\n+      \"edgeToEdgeEnabled\": true,\n+      \"package\": \"com.lysco.app\"\n     },\n     \"web\": {\n       \"bundler\": \"metro\",\n       \"output\": \"static\",\n@@ -32,11 +37,18 @@\n           \"imageWidth\": 200,\n           \"resizeMode\": \"contain\",\n           \"backgroundColor\": \"#ffffff\"\n         }\n-      ]\n+      ],\n+      \"expo-web-browser\"\n     ],\n     \"experiments\": {\n       \"typedRoutes\": true\n+    },\n+    \"extra\": {\n+      \"router\": {},\n+      \"eas\": {\n+        \"projectId\": \"4e2f6c11-7116-4b4c-807c-eb060a2eacf6\"\n+      }\n     }\n   }\n }\n"
+                },
+                {
+                    "date": 1754241638078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     \"name\": \"lysco\",\n     \"slug\": \"lysco\",\n     \"version\": \"1.0.0\",\n     \"orientation\": \"portrait\",\n-    \"icon\": \"./assets/images/logo-lys&co.jpg\",\n+    \"icon\": \"./assets/images/logo-lys_co.png\",\n     \"scheme\": \"lysco\",\n     \"userInterfaceStyle\": \"automatic\",\n     \"newArchEnabled\": true,\n     \"ios\": {\n"
+                },
+                {
+                    "date": 1754292689180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n     \"ios\": {\n       \"supportsTablet\": true,\n       \"bundleIdentifier\": \"com.lysandco\",\n       \"infoPlist\": {\n-        \"ITSAppUsesNonExemptEncryption\": false\n+        \"ITSAppUsesNonExemptEncryption\": false,\n+        \"NSCameraUsageDescription\": \"Cette application utilise la caméra pour permettre à l'utilisateur de prendre des photos.\",\n+        \"NSPhotoLibraryUsageDescription\": \"Cette application utilise la photothèque pour permettre à l'utilisateur de choisir des images.\"\n       }\n     },\n     \"android\": {\n       \"adaptiveIcon\": {\n"
+                },
+                {
+                    "date": 1754899909868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \"slug\": \"lysco\",\n     \"version\": \"1.0.0\",\n     \"orientation\": \"portrait\",\n     \"icon\": \"./assets/images/logo-lys_co.png\",\n-    \"scheme\": \"lysco\",\n+    \"scheme\": \"lysco-dev\",\n     \"userInterfaceStyle\": \"automatic\",\n     \"newArchEnabled\": true,\n     \"ios\": {\n       \"supportsTablet\": true,\n"
+                },
+                {
+                    "date": 1754902435034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \"slug\": \"lysco\",\n     \"version\": \"1.0.0\",\n     \"orientation\": \"portrait\",\n     \"icon\": \"./assets/images/logo-lys_co.png\",\n-    \"scheme\": \"lysco-dev\",\n+    \"scheme\": \"lysco\",\n     \"userInterfaceStyle\": \"automatic\",\n     \"newArchEnabled\": true,\n     \"ios\": {\n       \"supportsTablet\": true,\n"
                 }
             ],
             "date": 1752751280763,
